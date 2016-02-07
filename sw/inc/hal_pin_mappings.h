@@ -1,0 +1,440 @@
+/*
+ * pin_mappings.h
+ *
+ *  Created on: Jan 27, 2015
+ *      Author: usenius
+ *
+ *  Defines keypad pin mappings for different pcb revisions used
+ */
+
+#ifndef UW_KEYPAD_SRC_PIN_MAPPINGS_H_
+#define UW_KEYPAD_SRC_PIN_MAPPINGS_H_
+
+#include "LPC11xx.h"
+#include "hal_adc_controller.h"
+
+
+/// @note: Preprocessor symbols for different builds should be defined at compiler level.
+
+
+#if defined (PROTOTYPE_0_2)
+#define LED_1_PIN_NUMBER	10
+#define LED_1_PORT			LPC_GPIO2
+#elif defined (LEFT_0_5)
+#define LED_1_PIN_NUMBER	10
+#define LED_1_PORT			LPC_GPIO2
+#elif defined (LEFT_1_0)
+#define LED_1_PIN_NUMBER	10
+#define LED_1_PORT			LPC_GPIO2
+#elif defined (LEFT_1_1)
+#define LED_1_PIN_NUMBER	10
+#define LED_1_PORT			LPC_GPIO2
+#elif defined (RIGHT_0_6)
+#define LED_1_PIN_NUMBER	1
+#define LED_1_PORT			LPC_GPIO2
+#elif defined (RIGHT_1_0)
+#define LED_1_PIN_NUMBER	1
+#define LED_1_PORT			LPC_GPIO2
+#endif
+#define LED_1_PIN			((LPC_GPIO2->DATA >> LED_1_PIN_NUMBER) & 1)
+#define INIT_LED_1			LED_1_PORT->DIR |= (1 << LED_1_PIN_NUMBER)
+#define LED_1_ON			LED_1_PORT->DATA |= (1 << LED_1_PIN_NUMBER)
+#define LED_1_OFF			LED_1_PORT->DATA &= ~(1 << LED_1_PIN_NUMBER)
+#define LED_1_TOGGLE		LED_1_PORT->DATA ^= (1 << LED_1_PIN_NUMBER)
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define BACKLIGHT_PIN_NUMBER	8
+#define BACKLIGHT_PORT		LPC_GPIO2
+#elif defined (LEFT_0_5)
+#define BACKLIGHT_PIN_NUMBER	8
+#define BACKLIGHT_PORT		LPC_GPIO2
+#elif defined (LEFT_1_0)
+#define BACKLIGHT_PIN_NUMBER	8
+#define BACKLIGHT_PORT		LPC_GPIO2
+#elif defined (LEFT_1_1)
+#define BACKLIGHT_PIN_NUMBER	8
+#define BACKLIGHT_PORT		LPC_GPIO2
+#elif defined (RIGHT_0_6)
+#define BACKLIGHT_PIN_NUMBER	2
+#define BACKLIGHT_PORT		LPC_GPIO2
+#elif defined (RIGHT_1_0)
+#define BACKLIGHT_PIN_NUMBER	2
+#define BACKLIGHT_PORT		LPC_GPIO2
+#endif
+#define BACKLIGHT_PIN		((BACKLIGHT_PORT->DATA >> BACKLIGHT_PIN_NUMBER) & 1)
+#define INIT_BACKLIGHT		BACKLIGHT_PORT->DIR |= (1 << BACKLIGHT_PIN_NUMBER)
+#define BACKLIGHT_ON		BACKLIGHT_PORT->DATA |= (1 << BACKLIGHT_PIN_NUMBER)
+#define BACKLIGHT_OFF		BACKLIGHT_PORT->DATA &= ~(1 << BACKLIGHT_PIN_NUMBER)
+#define BACKLIGHT_TOGGLE	BACKLIGHT_PORT->DATA ^= (1 << BACKLIGHT_PIN_NUMBER)
+
+
+
+//buttons area active low
+#if defined (PROTOTYPE_0_2)
+#define BUTTON_1_PIN_NUMBER	0
+#define BUTTON_1_PORT		LPC_GPIO2
+#define INIT_BUTTON_1		BUTTON_1_PORT->DIR &= ~(1 << BUTTON_1_PIN_NUMBER)
+#elif defined (LEFT_0_5)
+#define BUTTON_1_PIN_NUMBER	8
+#define BUTTON_1_PORT		LPC_GPIO0
+#define INIT_BUTTON_1		BUTTON_1_PORT->DIR &= ~(1 << BUTTON_1_PIN_NUMBER); \
+	LPC_IOCON->PIO0_8 |= (1 << 5)
+#elif defined (LEFT_1_0)
+#define BUTTON_1_PIN_NUMBER	1
+#define BUTTON_1_PORT		LPC_GPIO3
+#define INIT_BUTTON_1		BUTTON_1_PORT->DIR &= ~(1 << BUTTON_1_PIN_NUMBER); \
+	LPC_IOCON->PIO3_1 |= (1 << 5)
+#elif defined (LEFT_1_1)
+#define BUTTON_1_PIN_NUMBER	1
+#define BUTTON_1_PORT		LPC_GPIO3
+#define INIT_BUTTON_1		BUTTON_1_PORT->DIR &= ~(1 << BUTTON_1_PIN_NUMBER); \
+	LPC_IOCON->PIO3_1 |= (1 << 5)
+#elif defined (RIGHT_0_6)
+#define BUTTON_1_PIN_NUMBER	0
+#define BUTTON_1_PORT		LPC_GPIO2
+#define INIT_BUTTON_1		BUTTON_1_PORT->DIR &= ~(1 << BUTTON_1_PIN_NUMBER); \
+	LPC_IOCON->PIO2_0 |= (1 << 5)
+#elif defined (RIGHT_1_0)
+#define BUTTON_1_PIN_NUMBER	0
+#define BUTTON_1_PORT		LPC_GPIO2
+#define INIT_BUTTON_1		BUTTON_1_PORT->DIR &= ~(1 << BUTTON_1_PIN_NUMBER); \
+	LPC_IOCON->PIO2_10 |= (1 << 5)
+#endif
+#define BUTTON_1_DATA_PORT	BUTTON_1_PORT->DATA
+#define BUTTON_1			((~(BUTTON_1_DATA_PORT >> BUTTON_1_PIN_NUMBER)) & 1)
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define BUTTON_2_PIN_NUMBER	1
+#define BUTTON_2_PORT		LPC_GPIO0
+#define INIT_BUTTON_2		BUTTON_2_PORT->DIR &= ~(1 << BUTTON_2_PIN_NUMBER)
+#elif defined (LEFT_0_5)
+#define BUTTON_2_PIN_NUMBER	1
+#define BUTTON_2_PORT		LPC_GPIO3
+#define INIT_BUTTON_2		BUTTON_2_PORT->DIR &= ~(1 << BUTTON_2_PIN_NUMBER); \
+	LPC_IOCON->PIO3_1 |= (1 << 5)
+#elif defined (LEFT_1_0)
+#define BUTTON_2_PIN_NUMBER	3
+#define BUTTON_2_PORT		LPC_GPIO2
+#define INIT_BUTTON_2		BUTTON_2_PORT->DIR &= ~(1 << BUTTON_2_PIN_NUMBER); \
+	LPC_IOCON->PIO2_3 |= (1 << 5)
+#elif defined (LEFT_1_1)
+#define BUTTON_2_PIN_NUMBER	3
+#define BUTTON_2_PORT		LPC_GPIO2
+#define INIT_BUTTON_2		BUTTON_2_PORT->DIR &= ~(1 << BUTTON_2_PIN_NUMBER); \
+	LPC_IOCON->PIO2_3 |= (1 << 5)
+#elif defined (RIGHT_0_6)
+#define BUTTON_2_PIN_NUMBER	3
+#define BUTTON_2_PORT		LPC_GPIO3
+#define INIT_BUTTON_2		BUTTON_2_PORT->DIR &= ~(1 << BUTTON_2_PIN_NUMBER); \
+	LPC_IOCON->PIO3_3 |= (1 << 5)
+#elif defined (RIGHT_1_0)
+#define BUTTON_2_PIN_NUMBER	3
+#define BUTTON_2_PORT		LPC_GPIO3
+#define INIT_BUTTON_2		BUTTON_2_PORT->DIR &= ~(1 << BUTTON_2_PIN_NUMBER); \
+	LPC_IOCON->PIO0_8 |= (1 << 5)
+#endif
+#define BUTTON_2_DATA_PORT	BUTTON_2_PORT->DATA
+#define BUTTON_2			((~(BUTTON_2_DATA_PORT >> BUTTON_2_PIN_NUMBER)) & 1)
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define BUTTON_3_PIN_NUMBER 5
+#define BUTTON_3_PORT		LPC_GPIO1
+#define INIT_BUTTON_3		BUTTON_3_PORT->DIR &= ~(1 << BUTTON_3_PIN_NUMBER)
+#elif defined (LEFT_0_5)
+#define BUTTON_3_PIN_NUMBER 3
+#define BUTTON_3_PORT		LPC_GPIO3
+#define INIT_BUTTON_3		BUTTON_3_PORT->DIR &= ~(1 << BUTTON_3_PIN_NUMBER); \
+	LPC_IOCON->PIO3_3 |= (1 << 5)
+#elif defined (LEFT_1_0)
+#define BUTTON_3_PIN_NUMBER 3
+#define BUTTON_3_PORT		LPC_GPIO3
+#define INIT_BUTTON_3		BUTTON_3_PORT->DIR &= ~(1 << BUTTON_3_PIN_NUMBER); \
+	LPC_IOCON->PIO3_3 |= (1 << 5)
+#elif defined (LEFT_1_1)
+#define BUTTON_3_PIN_NUMBER 3
+#define BUTTON_3_PORT		LPC_GPIO3
+#define INIT_BUTTON_3		BUTTON_3_PORT->DIR &= ~(1 << BUTTON_3_PIN_NUMBER); \
+	LPC_IOCON->PIO3_3 |= (1 << 5)
+#elif defined (RIGHT_0_6)
+#define BUTTON_3_PIN_NUMBER 0
+#define BUTTON_3_PORT		LPC_GPIO3
+#define INIT_BUTTON_3		BUTTON_3_PORT->DIR &= ~(1 << BUTTON_3_PIN_NUMBER); \
+	LPC_IOCON->PIO3_0 |= (1 << 5)
+#elif defined (RIGHT_1_0)
+#define BUTTON_3_PIN_NUMBER 0
+#define BUTTON_3_PORT		LPC_GPIO3
+#define INIT_BUTTON_3		BUTTON_3_PORT->DIR &= ~(1 << BUTTON_3_PIN_NUMBER); \
+	LPC_IOCON->PIO0_6 |= (1 << 5)
+#endif
+#define BUTTON_3_DATA_PORT	BUTTON_3_PORT->DATA
+#define BUTTON_3			((~(BUTTON_3_DATA_PORT >> BUTTON_3_PIN_NUMBER)) & 1)
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define BUTTON_4_PIN_NUMBER	3
+#define BUTTON_4_PORT		LPC_GPIO3
+#define INIT_BUTTON_4		BUTTON_4_PORT->DIR &= ~(1 << BUTTON_4_PIN_NUMBER)
+#elif defined (LEFT_0_5)
+#define BUTTON_4_PIN_NUMBER	0
+#define BUTTON_4_PORT		LPC_GPIO2
+#define INIT_BUTTON_4		BUTTON_4_PORT->DIR &= ~(1 << BUTTON_4_PIN_NUMBER); \
+	LPC_IOCON->PIO2_0 |= (1 << 5)
+#elif defined (LEFT_1_0)
+#define BUTTON_4_PIN_NUMBER	0
+#define BUTTON_4_PORT		LPC_GPIO2
+#define INIT_BUTTON_4		BUTTON_4_PORT->DIR &= ~(1 << BUTTON_4_PIN_NUMBER); \
+	LPC_IOCON->PIO2_0 |= (1 << 5)
+#elif defined (LEFT_1_1)
+#define BUTTON_4_PIN_NUMBER	0
+#define BUTTON_4_PORT		LPC_GPIO2
+#define INIT_BUTTON_4		BUTTON_4_PORT->DIR &= ~(1 << BUTTON_4_PIN_NUMBER); \
+	LPC_IOCON->PIO2_0 |= (1 << 5)
+#elif defined (RIGHT_0_6)
+#define BUTTON_4_PIN_NUMBER	8
+#define BUTTON_4_PORT		LPC_GPIO0
+#define INIT_BUTTON_4		BUTTON_4_PORT->DIR &= ~(1 << BUTTON_4_PIN_NUMBER); \
+	LPC_IOCON->PIO0_8 |= (1 << 5)
+#elif defined (RIGHT_1_0)
+#define BUTTON_4_PIN_NUMBER	8
+#define BUTTON_4_PORT		LPC_GPIO0
+#define INIT_BUTTON_4		BUTTON_4_PORT->DIR &= ~(1 << BUTTON_4_PIN_NUMBER); \
+	LPC_IOCON->PIO3_0 |= (1 << 5)
+#endif
+#define BUTTON_4_DATA_PORT	BUTTON_4_PORT->DATA
+#define BUTTON_4			((~(BUTTON_4_DATA_PORT >> BUTTON_4_PIN_NUMBER)) & 1)
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define BUTTON_5_PIN_NUMBER	3
+#define BUTTON_5_PORT		LPC_GPIO2
+#define INIT_BUTTON_5		BUTTON_5_PORT->DIR &= ~(1 << BUTTON_5_PIN_NUMBER)
+#elif defined (LEFT_0_5)
+#define BUTTON_5_PIN_NUMBER	2
+#define BUTTON_5_PORT		LPC_GPIO2
+#define INIT_BUTTON_5		BUTTON_5_PORT->DIR &= ~(1 << BUTTON_5_PIN_NUMBER); \
+	LPC_IOCON->PIO2_2 |= (1 << 5)
+#elif defined (LEFT_1_0)
+#define BUTTON_5_PIN_NUMBER	2
+#define BUTTON_5_PORT		LPC_GPIO1
+#define INIT_BUTTON_5		BUTTON_5_PORT->DIR &= ~(1 << BUTTON_5_PIN_NUMBER); \
+	LPC_IOCON->R_PIO1_2 |= ((1 << 5) | (1))
+#elif defined (LEFT_1_1)
+#define BUTTON_5_PIN_NUMBER	2
+#define BUTTON_5_PORT		LPC_GPIO1
+#define INIT_BUTTON_5		BUTTON_5_PORT->DIR &= ~(1 << BUTTON_5_PIN_NUMBER); \
+	LPC_IOCON->R_PIO1_2 |= ((1 << 5) | (1))
+#elif defined (RIGHT_0_6)
+#define BUTTON_5_PIN_NUMBER	7
+#define BUTTON_5_PORT		LPC_GPIO2
+#define INIT_BUTTON_5		BUTTON_5_PORT->DIR &= ~(1 << BUTTON_5_PIN_NUMBER); \
+	LPC_IOCON->PIO2_7 |= (1 << 5)
+#elif defined (RIGHT_1_0)
+#define BUTTON_5_PIN_NUMBER	7
+#define BUTTON_5_PORT		LPC_GPIO2
+#define INIT_BUTTON_5		BUTTON_5_PORT->DIR &= ~(1 << BUTTON_5_PIN_NUMBER); \
+	LPC_IOCON->PIO2_8 |= (1 << 5)
+#endif
+#define BUTTON_5_DATA_PORT	BUTTON_5_PORT->DATA
+#define BUTTON_5			((~(BUTTON_5_DATA_PORT >> BUTTON_5_PIN_NUMBER)) & 1)
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define BUTTON_6_PIN_NUMBER	1
+#define BUTTON_6_PORT		LPC_GPIO3
+#define INIT_BUTTON_6		BUTTON_6_PORT->DIR &= ~(1 << BUTTON_6_PIN_NUMBER)
+#elif defined (LEFT_0_5)
+#define BUTTON_6_PIN_NUMBER	3
+#define BUTTON_6_PORT		LPC_GPIO2
+#define INIT_BUTTON_6		BUTTON_6_PORT->DIR &= ~(1 << BUTTON_6_PIN_NUMBER); \
+	LPC_IOCON->PIO2_3 |= (1 << 5)
+#elif defined (LEFT_1_0)
+#define BUTTON_6_PIN_NUMBER	7
+#define BUTTON_6_PORT		LPC_GPIO0
+#define INIT_BUTTON_6		BUTTON_6_PORT->DIR &= ~(1 << BUTTON_6_PIN_NUMBER); \
+	LPC_IOCON->PIO0_7 |= (1 << 5)
+#elif defined (LEFT_1_1)
+#define BUTTON_6_PIN_NUMBER	7
+#define BUTTON_6_PORT		LPC_GPIO0
+#define INIT_BUTTON_6		BUTTON_6_PORT->DIR &= ~(1 << BUTTON_6_PIN_NUMBER); \
+	LPC_IOCON->PIO0_7 |= (1 << 5)
+#elif defined (RIGHT_0_6)
+#define BUTTON_6_PIN_NUMBER	8
+#define BUTTON_6_PORT		LPC_GPIO2
+#define INIT_BUTTON_6		BUTTON_6_PORT->DIR &= ~(1 << BUTTON_6_PIN_NUMBER); \
+	LPC_IOCON->PIO2_8 |= (1 << 5)
+#elif defined (RIGHT_1_0)
+#define BUTTON_6_PIN_NUMBER	8
+#define BUTTON_6_PORT		LPC_GPIO2
+#define INIT_BUTTON_6		BUTTON_6_PORT->DIR &= ~(1 << BUTTON_6_PIN_NUMBER); \
+	LPC_IOCON->PIO3_3 |= (1 << 5)
+#endif
+#define BUTTON_6_DATA_PORT	BUTTON_6_PORT->DATA
+#define BUTTON_6			((~(BUTTON_6_DATA_PORT >> BUTTON_6_PIN_NUMBER)) & 1)
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define BUTTON_7_PIN_NUMBER	2
+#define BUTTON_7_PORT		LPC_GPIO2
+#define INIT_BUTTON_7		BUTTON_7_PORT->DIR &= ~(1 << BUTTON_7_PIN_NUMBER)
+#elif defined (LEFT_0_5)
+#define BUTTON_7_PIN_NUMBER	5
+#define BUTTON_7_PORT		LPC_GPIO1
+#define INIT_BUTTON_7		BUTTON_7_PORT->DIR &= ~(1 << BUTTON_7_PIN_NUMBER); \
+	LPC_IOCON->PIO1_5 |= (1 << 5)
+#elif defined (LEFT_1_0)
+#define BUTTON_7_PIN_NUMBER	5
+#define BUTTON_7_PORT		LPC_GPIO1
+#define INIT_BUTTON_7		BUTTON_7_PORT->DIR &= ~(1 << BUTTON_7_PIN_NUMBER); \
+	LPC_IOCON->PIO1_5 |= (1 << 5)
+#elif defined (LEFT_1_1)
+#define BUTTON_7_PIN_NUMBER	1
+#define BUTTON_7_PORT		LPC_GPIO2
+#define INIT_BUTTON_7		BUTTON_7_PORT->DIR &= ~(1 << BUTTON_7_PIN_NUMBER); \
+	LPC_IOCON->PIO2_5 |= (1 << 5)
+#elif defined (RIGHT_0_6)
+#define BUTTON_7_PIN_NUMBER	6
+#define BUTTON_7_PORT		LPC_GPIO0
+#define INIT_BUTTON_7		BUTTON_7_PORT->DIR &= ~(1 << BUTTON_7_PIN_NUMBER); \
+	LPC_IOCON->PIO0_6 |= (1 << 5)
+#elif defined (RIGHT_1_0)
+#define BUTTON_7_PIN_NUMBER	6
+#define BUTTON_7_PORT		LPC_GPIO0
+#define INIT_BUTTON_7		BUTTON_7_PORT->DIR &= ~(1 << BUTTON_7_PIN_NUMBER); \
+	LPC_IOCON->PIO2_7 |= (1 << 5)
+#endif
+#define BUTTON_7_DATA_PORT	BUTTON_7_PORT->DATA
+#define BUTTON_7			((~(BUTTON_7_DATA_PORT >> BUTTON_7_PIN_NUMBER)) & 1)
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define BUTTON_8_PIN_NUMBER	8
+#define BUTTON_8_PORT		LPC_GPIO0
+#define INIT_BUTTON_8		BUTTON_8_PORT->DIR &= ~(1 << BUTTON_8_PIN_NUMBER)
+#elif defined (LEFT_0_5)
+#define BUTTON_8_PIN_NUMBER	1
+#define BUTTON_8_PORT		LPC_GPIO0
+#define INIT_BUTTON_8		BUTTON_8_PORT->DIR &= ~(1 << BUTTON_8_PIN_NUMBER); \
+	LPC_IOCON->PIO0_1 |= (1 << 5)
+#elif defined (LEFT_1_0)
+#define BUTTON_8_PIN_NUMBER	1
+#define BUTTON_8_PORT		LPC_GPIO0
+#define INIT_BUTTON_8		BUTTON_8_PORT->DIR &= ~(1 << BUTTON_8_PIN_NUMBER); \
+	LPC_IOCON->PIO0_1 |= (1 << 5)
+#elif defined (LEFT_1_1)
+#define BUTTON_8_PIN_NUMBER	1
+#define BUTTON_8_PORT		LPC_GPIO0
+#define INIT_BUTTON_8		BUTTON_8_PORT->DIR &= ~(1 << BUTTON_8_PIN_NUMBER); \
+	LPC_IOCON->PIO0_1 |= (1 << 5)
+#elif defined (RIGHT_0_6)
+#define BUTTON_8_PIN_NUMBER	7
+#define BUTTON_8_PORT		LPC_GPIO0
+#define INIT_BUTTON_8		BUTTON_8_PORT->DIR &= ~(1 << BUTTON_8_PIN_NUMBER); \
+	LPC_IOCON->PIO0_7 |= (1 << 5)
+#elif defined (RIGHT_1_0)
+#define BUTTON_8_PIN_NUMBER	10
+#define BUTTON_8_PORT		LPC_GPIO2
+#define INIT_BUTTON_8		BUTTON_8_PORT->DIR &= ~(1 << BUTTON_8_PIN_NUMBER); \
+	LPC_IOCON->PIO2_0 |= (1 << 5)
+#endif
+#define BUTTON_8_DATA_PORT	BUTTON_8_PORT->DATA
+#define BUTTON_8			((~(BUTTON_8_DATA_PORT >> BUTTON_8_PIN_NUMBER)) & 1)
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define JOYSTICK_X_ANALOG_CHANNEL 		ADC_CHN_0
+#elif defined (LEFT_0_5)
+#define JOYSTICK_X_ANALOG_CHANNEL 		ADC_CHN_0
+#elif defined (LEFT_1_0)
+#define JOYSTICK_X_ANALOG_CHANNEL 		ADC_CHN_0
+#elif defined (LEFT_1_1)
+#define JOYSTICK_X_ANALOG_CHANNEL 		ADC_CHN_0
+#elif defined (RIGHT_0_6)
+#define JOYSTICK_X_ANALOG_CHANNEL 		ADC_CHN_2
+#elif defined (RIGHT_1_0)
+#define JOYSTICK_X_ANALOG_CHANNEL 		ADC_CHN_2
+#endif
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define JOYSTICK_Y_ANALOG_CHANNEL		ADC_CHN_2
+#elif defined (LEFT_0_5)
+#define JOYSTICK_Y_ANALOG_CHANNEL		ADC_CHN_2
+#elif defined (LEFT_1_0)
+#define JOYSTICK_Y_ANALOG_CHANNEL		ADC_CHN_2
+#elif defined (LEFT_1_1)
+#define JOYSTICK_Y_ANALOG_CHANNEL		ADC_CHN_2
+#elif defined (RIGHT_0_6)
+#define JOYSTICK_Y_ANALOG_CHANNEL		ADC_CHN_0
+#elif defined (RIGHT_1_0)
+#define JOYSTICK_Y_ANALOG_CHANNEL		ADC_CHN_0
+#endif
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define JOYSTICK_Z_ANALOG_CHANNEL		ADC_CHN_1
+#elif defined (LEFT_0_5)
+#define JOYSTICK_Z_ANALOG_CHANNEL		ADC_CHN_1
+#elif defined (LEFT_1_0)
+#define JOYSTICK_Z_ANALOG_CHANNEL		ADC_CHN_1
+#elif defined (LEFT_1_1)
+#define JOYSTICK_Z_ANALOG_CHANNEL		ADC_CHN_1
+#elif defined (RIGHT_0_6)
+#define JOYSTICK_Z_ANALOG_CHANNEL		ADC_CHN_1
+#elif defined (RIGHT_1_0)
+#define JOYSTICK_Z_ANALOG_CHANNEL		ADC_CHN_1
+#endif
+
+
+/// @brief: Determines if potentiometers are enabled. For release builds they are disabled, since
+/// they do not fit under the keypad case.
+#if defined (PROTOTYPE_0_2)
+#define POTENTIOMETERS_ENABLED	1
+#elif defined (LEFT_0_5)
+#define POTENTIOMETERS_ENABLED	0
+#elif defined (RIGHT_0_6)
+#define POTENTIOMETERS_ENABLED	0
+#else
+#define POTENTIOMETERS_ENABLED	0
+#endif
+
+#if defined (PROTOTYPE_0_2)
+#define POTENTIOMETER_1_ANALOG_CHANNEL	ADC_CHN_3
+#elif defined (LEFT_0_5)
+#define POTENTIOMETER_1_ANALOG_CHANNEL	ADC_CHN_3
+#elif defined (RIGHT_0_6)
+#define POTENTIOMETER_1_ANALOG_CHANNEL	ADC_CHN_3
+#else
+#define POTENTIOMETER_1_ANALOG_CHANNEL	0
+#endif
+
+
+
+#if defined (PROTOTYPE_0_2)
+#define POTENTIOMETER_2_ANALOG_CHANNEL	ADC_CHN_5
+#elif defined (LEFT_0_5)
+#define POTENTIOMETER_2_ANALOG_CHANNEL	ADC_CHN_5
+#elif defined (RIGHT_0_6)
+#define POTENTIOMETER_2_ANALOG_CHANNEL	ADC_CHN_5
+#else
+#define POTENTIOMETER_2_ANALOG_CHANNEL	0
+#endif
+
+
+
+
+
+#endif /* UW_KEYPAD_SRC_PIN_MAPPINGS_H_ */
