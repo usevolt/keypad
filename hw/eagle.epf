@@ -7,17 +7,13 @@ Desktop="Desktop"
 
 [Globals]
 AutoSaveProject=1
-UsedLibrary="/home/usenius/Dropbox/usevolt/projects/lib/eagle/arm.lbr"
-UsedLibrary="/home/usenius/Dropbox/usevolt/projects/lib/eagle/frames.lbr"
-UsedLibrary="/home/usenius/Dropbox/usevolt/projects/lib/eagle/holes.lbr"
-UsedLibrary="/home/usenius/Dropbox/usevolt/projects/lib/eagle/supply1.lbr"
-UsedLibrary="/home/usenius/Dropbox/usevolt/projects/lib/eagle/supply2.lbr"
-UsedLibrary="/home/usenius/Dropbox/usevolt/projects/lib/eagle/time-sync.lbr"
-UsedLibrary="/home/usenius/Dropbox/usevolt/projects/lib/eagle/usevolt.lbr"
+UsedLibrary="/home/usevolt/Dropbox/usevolt/projects/lib/eagle/frames.lbr"
+UsedLibrary="/home/usevolt/Dropbox/usevolt/projects/lib/eagle/supply1.lbr"
+UsedLibrary="/home/usevolt/Dropbox/usevolt/projects/lib/eagle/usevolt.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="65 130 989 924"
+Loc="150 111 1539 781"
 State=2
 Number=0
 
