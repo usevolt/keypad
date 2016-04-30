@@ -339,19 +339,19 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="-0.889" y1="-4.699" x2="0" y2="-4.699" width="0.2032" layer="21"/>
 <wire x1="0" y1="-4.699" x2="0.889" y2="-4.699" width="0.2032" layer="21"/>
 </package>
-<package name="SWITCH_EVQ9P6B40">
-<smd name="A" x="-2.0868" y="1.4534" dx="0.5" dy="0.7" layer="1"/>
-<smd name="A'" x="2.1132" y="1.4534" dx="0.5" dy="0.7" layer="1"/>
-<smd name="B" x="-2.0868" y="-1.4466" dx="0.5" dy="0.7" layer="1"/>
-<smd name="B'" x="2.1132" y="-1.4466" dx="0.5" dy="0.7" layer="1"/>
-<rectangle x1="-0.7368" y1="0.8034" x2="0.7632" y2="1.8034" layer="39"/>
-<wire x1="-2.2368" y1="0.7534" x2="-2.2368" y2="-0.7466" width="0.2" layer="21"/>
-<wire x1="2.2632" y1="0.7534" x2="2.2632" y2="-0.7466" width="0.2" layer="21"/>
-<wire x1="-1.4368" y1="-1.6966" x2="1.4632" y2="-1.6966" width="0.2" layer="21"/>
-<wire x1="-1.4368" y1="1.7034" x2="1.4632" y2="1.7034" width="0.2" layer="21"/>
-<text x="-2.3368" y="2.4384" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
-<text x="-2.3368" y="-3.2766" size="0.8128" layer="21" font="vector">&gt;NAME</text>
-<rectangle x1="-0.7368" y1="-1.7366" x2="0.7632" y2="-0.7366" layer="39"/>
+<package name="SWITCH_KMR231">
+<smd name="P$1" x="-2.0574" y="0.8128" dx="0.9" dy="1" layer="1"/>
+<smd name="P$2" x="-2.0574" y="-0.7872" dx="0.9" dy="1" layer="1"/>
+<smd name="P$3" x="2.0426" y="0.8128" dx="0.9" dy="1" layer="1"/>
+<smd name="P$4" x="2.0426" y="-0.7872" dx="0.9" dy="1" layer="1"/>
+<wire x1="-2.0574" y1="1.5128" x2="-1.7574" y2="1.8128" width="0.2" layer="21"/>
+<wire x1="-1.7574" y1="1.8128" x2="1.7426" y2="1.8128" width="0.2" layer="21"/>
+<wire x1="1.7426" y1="1.8128" x2="2.0426" y2="1.5128" width="0.2" layer="21"/>
+<wire x1="2.1426" y1="-1.4872" x2="1.8426" y2="-1.7872" width="0.2" layer="21"/>
+<wire x1="1.8426" y1="-1.7872" x2="-1.7574" y2="-1.7872" width="0.2" layer="21"/>
+<wire x1="-1.7574" y1="-1.7872" x2="-2.0574" y2="-1.4872" width="0.2" layer="21"/>
+<text x="-1.0574" y="0.3128" size="0.8128" layer="21" font="vector">&gt;NAME</text>
+<text x="-1.0574" y="-1.1872" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
 </package>
 <package name="DIODE">
 <smd name="P$1" x="0" y="0" dx="2.54" dy="1.27" layer="1" rot="R90"/>
@@ -971,7 +971,10 @@ Tuotetiedot, asiakirjat ja muuta
 <connect gate="G$1" pin="P$9" pad="P$9"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="FARNELL_ID" value="1513882" constant="no"/>
+<attribute name="MANUFACTURER_ID" value="43045-1006" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -1408,51 +1411,58 @@ http://fi.farnell.com/microchip/mcp2551-i-sn/ic-can-transceiver-hi-speed-smd/dp/
 </device>
 </devices>
 </deviceset>
-<deviceset name="SWITCH_EVQP6L" prefix="SW" uservalue="yes">
-<description>http://www.farnell.com/datasheets/1679727.pdf
+<deviceset name="SWITCH_KMR231G" prefix="SW" uservalue="yes">
+<description>http://www.farnell.com/datasheets/1792623.pdf
+ 
 
-PANASONIC ELECTRONIC COMPONENTS  EVQ9P6B40  SWITCH, 4X4MM, 2.4N
+C &amp; K COMPONENTS  KMR231G LFS  SWITCH, SMD, 3N, SPST, 0.05A, 32VDC
+
+    ★★★★★ ★★★★★ 
+
  Lisää suosikkeihin	
  Huomasitko virheen?
  Tulosta sivu
-PANASONIC ELECTRONIC COMPONENTS EVQ9P6B40
+C &amp; K COMPONENTS KMR231G LFS
 
 Suurenna napsauttamalla
 
 Kuva on vain kuvaavaa tarkoitusta varten. Lue tuotekuvaus tarkempia tietoja varten.
-PANASONIC ELECTRONIC COMPONENTS
+C &amp; K COMPONENTS
 
-    Valmistaja PANASONIC ELECTRONIC COMPONENTS
-    Tilauskoodi: 2079573
-    Valmistajan osanumero EVQ9P6B40
+    Valmistaja C &amp; K COMPONENTS
+    Tilauskoodi: 1437636
+    Valmistajan osanumero KMR231G LFS
 
-     Technical Data Sheet (124.82KB) EN
+     Technical Data Sheet (150.63KB) EN
 
-Tuotetiedot, asiakirjat ja muuta
+Tuotteen yleiskatsaus
+The KMR 2 series from C &amp;K Components are surface mount microminiature tactile switches.
 
-    Contact Current Max: 20mA
-    Contact Voltage DC Nom: 15V
-    Illumination: Non Illuminated
-    Operating Force: 2.4N
-    Product Range: -
-    SVHC: No SVHC (15-Jun-2015)
-    Switch Terminals: Solder</description>
+    Top actuated and 1.9mm height switch
+    Maximum voltage of 32VDC
+    SPST-NO contact configuration
+    Maximum current of 50mA(silver) and 10mA (gold)
+    Long life version
+    Available in 1.2N, 2N, 3N and 4N operating forces
+    Optional ground pin
+    Ultra low current capabilities
+    Momentary action
+    Gull wing terminations</description>
 <gates>
-<gate name="G$1" symbol="SWITCH" x="0" y="0"/>
+<gate name="G$1" symbol="SWITCH" x="-2.54" y="0"/>
 </gates>
 <devices>
-<device name="" package="SWITCH_EVQ9P6B40">
+<device name="" package="SWITCH_KMR231">
 <connects>
-<connect gate="G$1" pin="P$1" pad="A"/>
-<connect gate="G$1" pin="P$2" pad="B"/>
-<connect gate="G$1" pin="P$3" pad="A'"/>
-<connect gate="G$1" pin="P$4" pad="B'"/>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+<connect gate="G$1" pin="P$4" pad="P$4"/>
 </connects>
 <technologies>
 <technology name="">
-<attribute name="FARNELL_ID" value="2079541" constant="no"/>
-<attribute name="MANUFACTURER_ID" value="EVQ-P6LB55" constant="no"/>
-<attribute name="MOUSER_ID" value="667-EVQ-P6LB55" constant="no"/>
+<attribute name="FARNELL_ID" value="1437636" constant="no"/>
+<attribute name="MANUFACTURER_ID" value="KMR231G LFS" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -1526,7 +1536,10 @@ Tuotetiedot, asiakirjat ja muuta
 <connect gate="G$1" pin="P$4" pad="P$4"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="FARNELL_ID" value="9961429" constant="no"/>
+<attribute name="MANUFACTURER_ID" value="43045-0418" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -1864,22 +1877,22 @@ The Transil SMBJ series from STMicroelectronics are transient voltage suppressin
 <part name="C16" library="usevolt" deviceset="CAP" device="_0603" value="4.7u"/>
 <part name="C19" library="usevolt" deviceset="CAP" device="_0603" value="100n"/>
 <part name="J1" library="usevolt" deviceset="HEADER_USART_2" device="_SMD"/>
-<part name="SW11" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW12" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW6" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW7" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW8" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW13" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW14" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW9" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
+<part name="SW11" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW12" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW6" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW7" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW8" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW13" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW14" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW9" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
-<part name="SW4" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW5" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW3" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW2" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW1" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW15" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
-<part name="SW10" library="usevolt" deviceset="SWITCH_EVQP6L" device=""/>
+<part name="SW4" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW5" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW3" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW2" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW1" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW15" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
+<part name="SW10" library="usevolt" deviceset="SWITCH_KMR231G" device=""/>
 </parts>
 <sheets>
 <sheet>
