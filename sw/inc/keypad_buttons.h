@@ -10,6 +10,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <uw_gpio.h>
 
 typedef enum {
 	UW_BUTTON_ACTIVE_LOW = 0,
@@ -17,25 +18,26 @@ typedef enum {
 } uw_button_active_e;
 
 
+#define BUTTON_MAX_VALUE	1000
+
+
 //typedef for button data structure
 typedef struct {
-	//true when button is down
-	bool is_down;
-	//true for 1 step cycle when button was pressed
-	bool pressed;
-	//true for 1 step cycle when button was release
-	bool released;
-	// pointer to button's GPIO port
-	uint32_t* port;
-	// pin number from port
-	uint8_t pin;
+	//1000 when button is down
+	uint16_t is_down;
+	//1000 for 1 step cycle when button was pressed
+	uint16_t pressed;
+	//1000 for 1 step cycle when button was release
+	uint16_t released;
 	// true if button is active_high
 	bool active_high;
+	// button's GPIO pin
+	uw_gpios_e gpio;
 } uw_button_st;
 
 
 /// @brief: button init function
-void uw_button_init(uw_button_st* button, uint32_t* port, uint8_t pin, bool active_high);
+void uw_button_init(uw_button_st* button, uw_gpios_e gpio, bool active_high);
 
 /// @brief: button step function
 void uw_button_step(uw_button_st* button);

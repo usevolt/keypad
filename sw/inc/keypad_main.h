@@ -15,52 +15,71 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-#include "LPC11xx.h"
-#include "hal_can_controller.h"
-#include "uw_filters.h"
+#include <uw_can.h>
+#include <uw_memory.h>
+
+
+#define UW_ERROR_COUNT				3
+#define UW_PDO_MAPPING_MAX_COUNT	4
+#define UW_BUTTON_COUNT				15
+
+
 
 /// @brief: keypad main data structure
 typedef struct {
 	//data structures for all buttons
-	uw_button_st button1;
-	uw_button_st button2;
-	uw_button_st button3;
-	uw_button_st button4;
-	uw_button_st button5;
-	uw_button_st button6;
-	uw_button_st button7;
-	uw_button_st button8;
-	T_MovingAver joy_x;
-	T_MovingAver joy_y;
-	T_MovingAver joy_z;
-}uw_keypad_st;
+	uw_button_st buttons[UW_BUTTON_COUNT];
+	uint16_t joy_x;
+	uint16_t joy_y;
+	uint16_t joy_z;
+	uint16_t joy_x_pos;
+	uint16_t joy_y_pos;
+	uint16_t joy_z_pos;
+	uint16_t joy_x_neg;
+	uint16_t joy_y_neg;
+	uint16_t joy_z_neg;
+
+	int heatbeat_delay;
+
+	uw_data_start_t data_start;
+
+	bool echo;
+	uint16_t joy_x_min;
+	uint16_t joy_x_max;
+	uint16_t joy_x_middle;
+	uint16_t joy_y_min;
+	uint16_t joy_y_max;
+	uint16_t joy_y_middle;
+	uint16_t joy_z_min;
+	uint16_t joy_z_max;
+	uint16_t joy_z_middle;
+
+	// CANopen object dictionary data
+	struct {
+		uint32_t device_type;
+		uint32_t error_array[UW_ERROR_COUNT];
+		uint8_t error_register;
+		uint8_t error_count;
+		uint8_t node_id;
+		uint8_t heartbeat_time;
+		uint32_t save_req;
+		uint32_t restore_req;
+		uw_pdos_st pdos;
+
+		uw_identity_object_st identity_obj;
+
+	} obj_dict;
+
+	uw_data_end_t data_end;
+
+} keypad_st;
 
 
-/// @brief: initializes the C_CAN hardware blog
-void uw_keypad_init_can();
+/// @brief: initializes the keypad main data structure
+void keypad_init();
 
 /// @brief: keypad main step function
-void uw_keypad_step(uw_keypad_st* me, uint32_t step_ms);
-
-///@brief: keypad pwm control handlers
-void uw_pwm_handler1(int cycles);
-void uw_pwm_handler2(int cycles);
-
-/// @brief: debug receive command handler
-void debug_command_handler(char* command, char** args);
-
-/// @brief: CAN command handler
-void can_command_handler(hal_can_msg_obj_st* msg);
-
-/// @brief: CAN error handler
-void can_error_handler(uint32_t errors);
-
-/// @brief: CANopen sdo expedited write callback
-void can_sdo_write_callback(uint16_t index, uint8_t subindex, uint8_t* data);
-
-/// @brief: CANopen NMT callback
-bool can_nmt_callback(hal_canopen_nmt_messages_e command);
-
+void keypad_step(void* me);
 
 
 #endif /* KEYPAD_MAIN_H_ */

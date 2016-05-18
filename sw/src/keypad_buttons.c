@@ -10,38 +10,35 @@
 #include <stdlib.h>
 
 /// @brief: button init function
-void uw_button_init(uw_button_st* button, uint32_t* port, uint8_t pin, bool active_high) {
-	button->is_down = false;
-	button->pressed = false;
-	button->released = false;
-	button->port = port;
-	button->pin = pin;
+void uw_button_init(uw_button_st* button, uw_gpios_e gpio, bool active_high) {
+	button->is_down = 0;
+	button->pressed = 0;
+	button->released = 0;
+	button->gpio = gpio;
 	button->active_high = active_high;
+	uw_gpio_init_input(gpio, PULL_UP_ENABLED | HYSTERESIS_ENABLED, INT_DISABLE);
+
 }
 
 /// @brief: button step function
 void uw_button_step(uw_button_st* button) {
-	//return if port is null
-	if (button->port == NULL) {
-		return;
-	}
 
 	//reset pressed and released
-	button->pressed = button->released = false;
+	button->pressed = button->released = 0;
 
 	//button down
-	if (((*(button->port) >> button->pin) & 1) == button->active_high) {
+	if (uw_gpio_get_pin(button->gpio) == button->active_high) {
 		//button was pressed
 		if (!button->is_down) {
-			button->pressed = true;
+			button->pressed = BUTTON_MAX_VALUE;
 		}
-		button->is_down = true;
+		button->is_down = BUTTON_MAX_VALUE;
 	}
 	//button up
 	else {
 		if (button->is_down) {
-			button->released = true;
+			button->released = BUTTON_MAX_VALUE;
 		}
-		button->is_down = false;
+		button->is_down = 0;
 	}
 }
