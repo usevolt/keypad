@@ -115,32 +115,14 @@ DIN A4, landscape with location and doc. field</description>
 <library name="usevolt">
 <description>Footprints for own devices</description>
 <packages>
-<package name="MOLEX-MICRO-FIT_10WAY">
-<pad name="P$1" x="0" y="-0.508" drill="1.016" diameter="1.778" shape="square"/>
-<pad name="P$2" x="-2.9972" y="-0.508" drill="1.016" diameter="1.778"/>
-<pad name="P$3" x="-5.9944" y="-0.508" drill="1.016" diameter="1.778"/>
-<pad name="P$4" x="-8.9916" y="-0.508" drill="1.016" diameter="1.778"/>
-<pad name="P$5" x="-11.9888" y="-0.508" drill="1.016" diameter="1.778"/>
-<pad name="P$10" x="-11.9888" y="2.4892" drill="1.016" diameter="1.778"/>
-<pad name="P$9" x="-8.9916" y="2.4892" drill="1.016" diameter="1.778"/>
-<pad name="P$8" x="-5.9944" y="2.4892" drill="1.016" diameter="1.778"/>
-<pad name="P$7" x="-2.9972" y="2.4892" drill="1.016" diameter="1.778"/>
-<pad name="P$6" x="0" y="2.4892" drill="1.016" diameter="1.778"/>
-<pad name="P$12" x="-1.143" y="-5.08" drill="1.905" diameter="3.81"/>
-<pad name="P$11" x="-10.795" y="-5.08" drill="1.905" diameter="3.81"/>
-<wire x1="3.429" y1="-9.398" x2="-15.24" y2="-9.398" width="0.127" layer="21"/>
-<wire x1="3.429" y1="1.016" x2="-15.24" y2="1.016" width="0.127" layer="21"/>
-<wire x1="-15.24" y1="-9.398" x2="-15.24" y2="1.016" width="0.127" layer="21"/>
-<wire x1="3.429" y1="-9.398" x2="3.429" y2="1.016" width="0.127" layer="21"/>
-</package>
 <package name="DO219AB">
-<smd name="P$1" x="0" y="0" dx="1.3" dy="1.4" layer="1"/>
-<smd name="P$2" x="3.535" y="0" dx="1.3" dy="1.4" layer="1"/>
-<wire x1="1.3175" y1="0.6" x2="1.3175" y2="-0.6" width="0.2032" layer="21"/>
-<wire x1="1.3175" y1="-0.6" x2="2.2175" y2="0" width="0.2032" layer="21"/>
-<wire x1="2.2175" y1="0" x2="1.3175" y2="0.6" width="0.2032" layer="21"/>
-<wire x1="2.2175" y1="0.6" x2="2.2175" y2="-0.6" width="0.2032" layer="21"/>
-<text x="0.5" y="1" size="0.8128" layer="21" font="vector">&gt;NAME</text>
+<smd name="P$1" x="-1.7675" y="0" dx="1.3" dy="1.4" layer="1"/>
+<smd name="P$2" x="1.7675" y="0" dx="1.3" dy="1.4" layer="1"/>
+<wire x1="-0.45" y1="0.6" x2="-0.45" y2="-0.6" width="0.2032" layer="21"/>
+<wire x1="-0.45" y1="-0.6" x2="0.45" y2="0" width="0.2032" layer="21"/>
+<wire x1="0.45" y1="0" x2="-0.45" y2="0.6" width="0.2032" layer="21"/>
+<wire x1="0.45" y1="0.6" x2="0.45" y2="-0.6" width="0.2032" layer="21"/>
+<text x="-1.2675" y="1" size="0.8128" layer="21" font="vector">&gt;NAME</text>
 </package>
 <package name="DO-214AC">
 <smd name="A" x="0.35" y="0" dx="1.8" dy="1.4" layer="1" rot="R180"/>
@@ -156,49 +138,36 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="5.25" y1="-1.4" x2="5.25" y2="-1.1" width="0.2032" layer="21"/>
 <wire x1="5.2" y1="1.4" x2="5.2" y2="1.1" width="0.2032" layer="21"/>
 </package>
-<package name="0603_SILKSCREEN">
-<smd name="0" x="-0.9779" y="0" dx="0.635" dy="0.889" layer="1"/>
-<smd name="1" x="0.5842" y="0" dx="0.635" dy="0.889" layer="1"/>
-<text x="-1.6129" y="1.905" size="0.8128" layer="21" font="vector">&gt;NAME</text>
-<wire x1="1.143" y1="0.6604" x2="1.143" y2="-0.6604" width="0.2032" layer="21"/>
-<wire x1="-1.5494" y1="-0.6604" x2="-1.5494" y2="0.6604" width="0.2032" layer="21"/>
-<wire x1="1.3462" y1="0.6604" x2="1.3462" y2="-0.6604" width="0.2032" layer="21"/>
-<wire x1="-1.5494" y1="-0.6604" x2="1.143" y2="-0.6604" width="0.2032" layer="21"/>
-<wire x1="1.143" y1="-0.6604" x2="1.3462" y2="-0.6604" width="0.2032" layer="21"/>
-<wire x1="-1.5494" y1="0.6604" x2="1.143" y2="0.6604" width="0.2032" layer="21"/>
-<wire x1="1.143" y1="0.6604" x2="1.3462" y2="0.6604" width="0.2032" layer="21"/>
-<text x="-1.6002" y="0.889" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
-</package>
 <package name="SOIC8">
-<smd name="P$1" x="-2.286" y="2.54" dx="0.635" dy="1.524" layer="1" rot="R270"/>
-<smd name="P$2" x="-2.286" y="1.27" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
-<smd name="P$3" x="-2.286" y="0" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
-<smd name="P$4" x="-2.286" y="-1.27" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
-<smd name="P$5" x="3.556" y="-1.27" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
-<smd name="P$6" x="3.556" y="0" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
-<smd name="P$7" x="3.556" y="1.27" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
-<smd name="P$8" x="3.556" y="2.54" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
-<wire x1="2.286" y1="3.556" x2="2.286" y2="-2.286" width="0.2032" layer="21"/>
-<wire x1="2.286" y1="-2.286" x2="-1.016" y2="-2.286" width="0.2032" layer="21"/>
-<wire x1="-1.016" y1="-2.286" x2="-1.016" y2="3.556" width="0.2032" layer="21"/>
-<wire x1="-1.016" y1="3.556" x2="2.286" y2="3.556" width="0.2032" layer="21"/>
-<circle x="0" y="2.54" radius="0.359209375" width="0.2032" layer="21"/>
-<text x="-0.635" y="0.635" size="0.8128" layer="21" font="vector">&gt;NAME</text>
-<text x="-0.635" y="-0.635" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
+<smd name="P$1" x="-2.921" y="1.905" dx="0.635" dy="1.524" layer="1" rot="R270"/>
+<smd name="P$2" x="-2.921" y="0.635" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
+<smd name="P$3" x="-2.921" y="-0.635" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
+<smd name="P$4" x="-2.921" y="-1.905" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
+<smd name="P$5" x="2.921" y="-1.905" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
+<smd name="P$6" x="2.921" y="-0.635" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
+<smd name="P$7" x="2.921" y="0.635" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
+<smd name="P$8" x="2.921" y="1.905" dx="0.635" dy="1.524" layer="1" roundness="100" rot="R270"/>
+<wire x1="1.651" y1="2.921" x2="1.651" y2="-2.921" width="0.2032" layer="21"/>
+<wire x1="1.651" y1="-2.921" x2="-1.651" y2="-2.921" width="0.2032" layer="21"/>
+<wire x1="-1.651" y1="-2.921" x2="-1.651" y2="2.921" width="0.2032" layer="21"/>
+<wire x1="-1.651" y1="2.921" x2="1.651" y2="2.921" width="0.2032" layer="21"/>
+<circle x="-0.635" y="1.905" radius="0.359209375" width="0.2032" layer="21"/>
+<text x="-1.27" y="0" size="0.8128" layer="21" font="vector">&gt;NAME</text>
+<text x="-1.27" y="-1.27" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
 </package>
 <package name="CAP_POL_SMD_10X10X10MM">
-<smd name="+" x="0" y="-0.635" dx="1.5" dy="2.54" layer="1"/>
-<smd name="-" x="0" y="10.935" dx="1.5" dy="2.54" layer="1"/>
-<wire x1="-1.5" y1="0" x2="-3.5" y2="0" width="0.2032" layer="21"/>
-<wire x1="-3.5" y1="0" x2="-5.5" y2="2" width="0.2032" layer="21"/>
-<wire x1="-5.5" y1="2" x2="-5.5" y2="10.5" width="0.2032" layer="21"/>
-<wire x1="-5.5" y1="10.5" x2="-1.5" y2="10.5" width="0.2032" layer="21"/>
-<wire x1="1.5" y1="10.5" x2="5.5" y2="10.5" width="0.2032" layer="21"/>
-<wire x1="5.5" y1="10.5" x2="5.5" y2="2" width="0.2032" layer="21"/>
-<wire x1="5.5" y1="2" x2="3.5" y2="0" width="0.2032" layer="21"/>
-<wire x1="3.5" y1="0" x2="1.5" y2="0" width="0.2032" layer="21"/>
-<text x="-1" y="3.5" size="1.27" layer="21" font="vector">&gt;VALUE</text>
-<text x="-1" y="5.365" size="1.27" layer="21" font="vector">&gt;NAME</text>
+<smd name="+" x="0" y="-5.15" dx="1.5" dy="3.81" layer="1"/>
+<smd name="-" x="0" y="5.15" dx="1.5" dy="3.81" layer="1"/>
+<wire x1="-1.5" y1="-5.15" x2="-3.5" y2="-5.15" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="-5.15" x2="-5.5" y2="-3.15" width="0.2032" layer="21"/>
+<wire x1="-5.5" y1="-3.15" x2="-5.5" y2="5.35" width="0.2032" layer="21"/>
+<wire x1="-5.5" y1="5.35" x2="-1.5" y2="5.35" width="0.2032" layer="21"/>
+<wire x1="1.5" y1="5.35" x2="5.5" y2="5.35" width="0.2032" layer="21"/>
+<wire x1="5.5" y1="5.35" x2="5.5" y2="-3.15" width="0.2032" layer="21"/>
+<wire x1="5.5" y1="-3.15" x2="3.5" y2="-5.15" width="0.2032" layer="21"/>
+<wire x1="3.5" y1="-5.15" x2="1.5" y2="-5.15" width="0.2032" layer="21"/>
+<text x="-1" y="-1.65" size="1.27" layer="21" font="vector">&gt;VALUE</text>
+<text x="-1" y="0.215" size="1.27" layer="21" font="vector">&gt;NAME</text>
 </package>
 <package name="1210">
 <description>metric 3225 SMD package</description>
@@ -207,16 +176,16 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="1.1" y1="1.1" x2="1.1" y2="-1.1" width="0.2032" layer="21"/>
 </package>
 <package name="INDUCTOR_BOURNS_10X13X5MM">
-<smd name="P$1" x="-1.754" y="0" dx="2.8" dy="3.556" layer="1" rot="R90"/>
-<smd name="P$2" x="9.054" y="0" dx="2.8" dy="3.556" layer="1" rot="R270"/>
-<wire x1="-2.4" y1="1.8" x2="1.6" y2="4.6" width="0.2032" layer="21"/>
-<wire x1="1.6" y1="4.6" x2="6" y2="4.6" width="0.2032" layer="21" curve="-72.359206"/>
-<wire x1="6" y1="4.6" x2="10" y2="1.8" width="0.2032" layer="21"/>
-<wire x1="10" y1="-1.8" x2="6" y2="-4.6" width="0.2032" layer="21"/>
-<wire x1="6" y1="-4.6" x2="1.6" y2="-4.6" width="0.2032" layer="21" curve="-72.359206"/>
-<wire x1="1.6" y1="-4.6" x2="-2.4" y2="-1.8" width="0.2032" layer="21"/>
-<text x="1.8" y="1.8" size="1.27" layer="21" font="vector">&gt;NAME</text>
-<text x="1.8" y="-1.2" size="1.27" layer="21" font="vector">&gt;VALUE</text>
+<smd name="P$1" x="-5.404" y="0" dx="2.8" dy="3.556" layer="1" rot="R90"/>
+<smd name="P$2" x="5.404" y="0" dx="2.8" dy="3.556" layer="1" rot="R270"/>
+<wire x1="-6.05" y1="1.8" x2="-2.05" y2="4.6" width="0.2032" layer="21"/>
+<wire x1="-2.05" y1="4.6" x2="2.35" y2="4.6" width="0.2032" layer="21" curve="-72.359206"/>
+<wire x1="2.35" y1="4.6" x2="6.35" y2="1.8" width="0.2032" layer="21"/>
+<wire x1="6.35" y1="-1.8" x2="2.35" y2="-4.6" width="0.2032" layer="21"/>
+<wire x1="2.35" y1="-4.6" x2="-2.05" y2="-4.6" width="0.2032" layer="21" curve="-72.359206"/>
+<wire x1="-2.05" y1="-4.6" x2="-6.05" y2="-1.8" width="0.2032" layer="21"/>
+<text x="-1.85" y="1.8" size="0.8128" layer="21" font="vector">&gt;NAME</text>
+<text x="-1.85" y="-1.2" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
 </package>
 <package name="RES_1/4W_TH">
 <pad name="0" x="0" y="0" drill="1" diameter="1.778" shape="square"/>
@@ -233,75 +202,76 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="5.715" y1="-1.016" x2="6.985" y2="0" width="0.2032" layer="21" curve="90"/>
 </package>
 <package name="SOD123">
-<smd name="P$1" x="0" y="0" dx="0.9" dy="0.95" layer="1" rot="R180"/>
-<smd name="P$2" x="3.2" y="0" dx="0.9" dy="0.95" layer="1" rot="R180"/>
-<wire x1="0.8" y1="0.7" x2="0.8" y2="-0.7" width="0.2032" layer="21"/>
-<wire x1="0.8" y1="-0.7" x2="2" y2="0" width="0.2032" layer="21"/>
-<wire x1="2" y1="0" x2="0.8" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="1.7" y1="0.7" x2="2.2" y2="0.7" width="0.2032" layer="21"/>
-<wire x1="2.2" y1="0.7" x2="2.2" y2="-0.7" width="0.2032" layer="21"/>
-<wire x1="2.2" y1="-0.7" x2="2.7" y2="-0.7" width="0.2032" layer="21"/>
-<text x="0.6" y="1" size="0.8128" layer="21" font="vector">&gt;NAME</text>
+<smd name="P$1" x="-1.6" y="0" dx="0.9" dy="0.95" layer="1" rot="R180"/>
+<smd name="P$2" x="1.6" y="0" dx="0.9" dy="0.95" layer="1" rot="R180"/>
+<wire x1="-0.8" y1="0.7" x2="-0.8" y2="-0.7" width="0.2032" layer="21"/>
+<wire x1="-0.8" y1="-0.7" x2="0.4" y2="0" width="0.2032" layer="21"/>
+<wire x1="0.4" y1="0" x2="-0.8" y2="0.7" width="0.2032" layer="21"/>
+<wire x1="0.1" y1="0.7" x2="0.6" y2="0.7" width="0.2032" layer="21"/>
+<wire x1="0.6" y1="0.7" x2="0.6" y2="-0.7" width="0.2032" layer="21"/>
+<wire x1="0.6" y1="-0.7" x2="1.1" y2="-0.7" width="0.2032" layer="21"/>
+<text x="-1" y="1" size="0.8128" layer="21" font="vector">&gt;NAME</text>
 </package>
 <package name="QFP48">
-<smd name="P$1" x="0.327" y="0" dx="1.246" dy="0.28" layer="1"/>
-<smd name="P$2" x="0.327" y="-0.5" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$3" x="0.327" y="-1" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$4" x="0.327" y="-1.5" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$5" x="0.327" y="-2" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$6" x="0.327" y="-2.5" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$7" x="0.327" y="-3" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$8" x="0.327" y="-3.5" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$9" x="0.327" y="-4" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$10" x="0.327" y="-4.5" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$11" x="0.327" y="-5" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$12" x="0.327" y="-5.5" dx="1.246" dy="0.28" layer="1" roundness="100"/>
-<smd name="P$13" x="2.125" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$14" x="2.625" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$15" x="3.125" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$16" x="3.625" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$17" x="4.125" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$18" x="4.625" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$19" x="5.125" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$20" x="5.625" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$21" x="6.125" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$22" x="6.625" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$23" x="7.125" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$24" x="7.625" y="-7.298" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
-<smd name="P$25" x="9.423" y="-5.5" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$26" x="9.423" y="-5" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$27" x="9.423" y="-4.5" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$28" x="9.423" y="-4" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$29" x="9.423" y="-3.5" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$30" x="9.423" y="-3" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$31" x="9.423" y="-2.5" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$32" x="9.423" y="-2" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$33" x="9.423" y="-1.5" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$34" x="9.423" y="-1" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$35" x="9.423" y="-0.5" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$36" x="9.423" y="0" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
-<smd name="P$37" x="7.625" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$38" x="7.125" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$39" x="6.625" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$40" x="6.125" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$41" x="5.625" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$42" x="5.125" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$43" x="4.625" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$44" x="4.125" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$45" x="3.625" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$46" x="3.125" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$47" x="2.625" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<smd name="P$48" x="2.125" y="1.798" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
-<wire x1="1.325" y1="0.5" x2="1.625" y2="0.8" width="0.2032" layer="21"/>
-<wire x1="1.625" y1="0.8" x2="8.125" y2="0.8" width="0.2032" layer="21"/>
-<wire x1="8.125" y1="0.8" x2="8.425" y2="0.5" width="0.2032" layer="21"/>
-<wire x1="8.425" y1="0.5" x2="8.425" y2="-6" width="0.2032" layer="21"/>
-<wire x1="8.425" y1="-6" x2="8.125" y2="-6.3" width="0.2032" layer="21"/>
-<wire x1="8.125" y1="-6.3" x2="1.625" y2="-6.3" width="0.2032" layer="21"/>
-<wire x1="1.625" y1="-6.3" x2="1.325" y2="-6" width="0.2032" layer="21"/>
-<wire x1="1.325" y1="-6" x2="1.325" y2="0.5" width="0.2032" layer="21"/>
-<circle x="2.25" y="0" radius="0.45069375" width="0.2032" layer="21"/>
-<text x="3.375" y="-2.875" size="0.8128" layer="21" font="vector">&gt;NAME</text>
+<smd name="P$1" x="-4.548" y="2.75" dx="1.246" dy="0.28" layer="1"/>
+<smd name="P$2" x="-4.548" y="2.25" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$3" x="-4.548" y="1.75" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$4" x="-4.548" y="1.25" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$5" x="-4.548" y="0.75" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$6" x="-4.548" y="0.25" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$7" x="-4.548" y="-0.25" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$8" x="-4.548" y="-0.75" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$9" x="-4.548" y="-1.25" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$10" x="-4.548" y="-1.75" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$11" x="-4.548" y="-2.25" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$12" x="-4.548" y="-2.75" dx="1.246" dy="0.28" layer="1" roundness="100"/>
+<smd name="P$13" x="-2.75" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$14" x="-2.25" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$15" x="-1.75" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$16" x="-1.25" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$17" x="-0.75" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$18" x="-0.25" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$19" x="0.25" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$20" x="0.75" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$21" x="1.25" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$22" x="1.75" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$23" x="2.25" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$24" x="2.75" y="-4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R90"/>
+<smd name="P$25" x="4.548" y="-2.75" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$26" x="4.548" y="-2.25" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$27" x="4.548" y="-1.75" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$28" x="4.548" y="-1.25" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$29" x="4.548" y="-0.75" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$30" x="4.548" y="-0.25" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$31" x="4.548" y="0.25" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$32" x="4.548" y="0.75" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$33" x="4.548" y="1.25" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$34" x="4.548" y="1.75" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$35" x="4.548" y="2.25" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$36" x="4.548" y="2.75" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R180"/>
+<smd name="P$37" x="2.75" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$38" x="2.25" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$39" x="1.75" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$40" x="1.25" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$41" x="0.75" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$42" x="0.25" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$43" x="-0.25" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$44" x="-0.75" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$45" x="-1.25" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$46" x="-1.75" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$47" x="-2.25" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<smd name="P$48" x="-2.75" y="4.548" dx="1.246" dy="0.28" layer="1" roundness="100" rot="R270"/>
+<wire x1="-3.55" y1="3.25" x2="-3.25" y2="3.55" width="0.2032" layer="21"/>
+<wire x1="-3.25" y1="3.55" x2="3.25" y2="3.55" width="0.2032" layer="21"/>
+<wire x1="3.25" y1="3.55" x2="3.55" y2="3.25" width="0.2032" layer="21"/>
+<wire x1="3.55" y1="3.25" x2="3.55" y2="-3.25" width="0.2032" layer="21"/>
+<wire x1="3.55" y1="-3.25" x2="3.25" y2="-3.55" width="0.2032" layer="21"/>
+<wire x1="3.25" y1="-3.55" x2="-3.25" y2="-3.55" width="0.2032" layer="21"/>
+<wire x1="-3.25" y1="-3.55" x2="-3.55" y2="-3.25" width="0.2032" layer="21"/>
+<wire x1="-3.55" y1="-3.25" x2="-3.55" y2="3.25" width="0.2032" layer="21"/>
+<circle x="-2.625" y="2.75" radius="0.45069375" width="0.2032" layer="21"/>
+<text x="-1.5" y="-0.125" size="0.8128" layer="21" font="vector">&gt;NAME</text>
+<text x="-1.5" y="-1.129" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
 </package>
 <package name="HEADER_USART_2_TH">
 <pad name="P$1" x="1.27" y="8.89" drill="1.016" shape="square"/>
@@ -397,18 +367,18 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="-2.4384" y1="1.3716" x2="-2.4384" y2="-1.4224" width="0.2032" layer="21"/>
 </package>
 <package name="HEADER_4_2_SMD">
-<smd name="P$1" x="-0.4572" y="0" dx="1.27" dy="2.54" layer="1" rot="R90"/>
-<smd name="P$2" x="5.08" y="0" dx="1.27" dy="2.54" layer="1" rot="R90"/>
-<smd name="P$3" x="-0.4572" y="-2.54" dx="1.27" dy="2.54" layer="1" rot="R90"/>
-<smd name="P$4" x="5.08" y="-2.54" dx="1.27" dy="2.54" layer="1" rot="R90"/>
-<smd name="P$5" x="-0.4572" y="-5.08" dx="1.27" dy="2.54" layer="1" rot="R90"/>
-<smd name="P$6" x="5.08" y="-5.08" dx="1.27" dy="2.54" layer="1" rot="R90"/>
-<smd name="P$7" x="-0.4572" y="-7.62" dx="1.27" dy="2.54" layer="1" rot="R90"/>
-<smd name="P$8" x="5.08" y="-7.62" dx="1.27" dy="2.54" layer="1" rot="R90"/>
-<wire x1="1.0668" y1="1.27" x2="3.6068" y2="1.27" width="0.254" layer="21"/>
-<wire x1="1.016" y1="-8.89" x2="3.556" y2="-8.89" width="0.254" layer="21"/>
-<text x="0" y="1.905" size="1.27" layer="21" font="vector">&gt;NAME</text>
-<text x="-0.635" y="-10.795" size="1.27" layer="21" font="vector">&gt;VALUE</text>
+<smd name="P$1" x="-2.7686" y="3.81" dx="1.27" dy="2.54" layer="1" rot="R90"/>
+<smd name="P$2" x="2.7686" y="3.81" dx="1.27" dy="2.54" layer="1" rot="R90"/>
+<smd name="P$3" x="-2.7686" y="1.27" dx="1.27" dy="2.54" layer="1" rot="R90"/>
+<smd name="P$4" x="2.7686" y="1.27" dx="1.27" dy="2.54" layer="1" rot="R90"/>
+<smd name="P$5" x="-2.7686" y="-1.27" dx="1.27" dy="2.54" layer="1" rot="R90"/>
+<smd name="P$6" x="2.7686" y="-1.27" dx="1.27" dy="2.54" layer="1" rot="R90"/>
+<smd name="P$7" x="-2.7686" y="-3.81" dx="1.27" dy="2.54" layer="1" rot="R90"/>
+<smd name="P$8" x="2.7686" y="-3.81" dx="1.27" dy="2.54" layer="1" rot="R90"/>
+<wire x1="-1.2446" y1="5.08" x2="1.2954" y2="5.08" width="0.254" layer="21"/>
+<wire x1="-1.2954" y1="-5.08" x2="1.2446" y2="-5.08" width="0.254" layer="21"/>
+<text x="-2.3114" y="5.715" size="1.27" layer="21" font="vector">&gt;NAME</text>
+<text x="-2.9464" y="-6.985" size="1.27" layer="21" font="vector">&gt;VALUE</text>
 </package>
 <package name="MOLEX_MICRO_FIT_10WAY_SMD">
 <pad name="P$11" x="0" y="0" drill="2.41"/>
@@ -427,9 +397,9 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="2" y1="7" x2="-1" y2="7" width="0.2" layer="21"/>
 <wire x1="-15" y1="7" x2="-18.35" y2="7" width="0.2" layer="21"/>
 <wire x1="-18.35" y1="7" x2="-18.35" y2="-3.05" width="0.2" layer="21"/>
-<wire x1="-18.35" y1="-3.05" x2="-14.4" y2="-7" width="0.2" layer="21"/>
-<wire x1="-14.4" y1="-7" x2="-2" y2="-7" width="0.2" layer="21"/>
-<wire x1="-2" y1="-7" x2="2" y2="-3" width="0.2" layer="21"/>
+<wire x1="-18.35" y1="-3.05" x2="-15.67" y2="-5.73" width="0.2" layer="21"/>
+<wire x1="-15.67" y1="-5.73" x2="-0.73" y2="-5.73" width="0.2" layer="21"/>
+<wire x1="-0.73" y1="-5.73" x2="2" y2="-3" width="0.2" layer="21"/>
 <text x="-11" y="1" size="1.016" layer="21" font="vector">&gt;NAME</text>
 <text x="-11" y="-1" size="1.016" layer="21" font="vector">&gt;VALUE</text>
 </package>
@@ -471,50 +441,83 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="2.7" y1="-1.5" x2="2.5" y2="-1.7" width="0.127" layer="21"/>
 <wire x1="2.5" y1="-1.7" x2="-2.4" y2="-1.7" width="0.127" layer="21"/>
 <wire x1="-2.4" y1="-1.7" x2="-2.6" y2="-1.5" width="0.127" layer="21"/>
-<text x="-3.175" y="1.905" size="1.27" layer="21" font="vector">&gt;VALUE</text>
-<text x="-3.175" y="-3.175" size="1.27" layer="21" font="vector">&gt;NAME</text>
+<text x="-3.175" y="1.905" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
+<text x="-3.175" y="-2.794" size="0.8128" layer="21" font="vector">&gt;NAME</text>
 </package>
 <package name="SOP5">
-<smd name="2" x="0" y="0" dx="1" dy="0.7" layer="1" rot="R90"/>
-<smd name="1" x="-1" y="0" dx="1" dy="0.7" layer="1" rot="R90"/>
-<smd name="3" x="1" y="0" dx="1" dy="0.7" layer="1" rot="R90"/>
-<smd name="5" x="-1" y="2.6" dx="1" dy="0.7" layer="1" rot="R90"/>
-<smd name="4" x="1" y="2.6" dx="1" dy="0.7" layer="1" rot="R90"/>
-<text x="-1" y="3.5" size="0.8128" layer="21" font="vector">&gt;NAME</text>
-<wire x1="-1.7" y1="2.5" x2="-1.8" y2="2.5" width="0.2032" layer="21"/>
-<wire x1="-1.8" y1="2.5" x2="-1.8" y2="0.1" width="0.2032" layer="21"/>
-<wire x1="-1.8" y1="0.1" x2="-1.7" y2="0.1" width="0.2032" layer="21"/>
-<wire x1="1.7" y1="2.5" x2="1.8" y2="2.5" width="0.2032" layer="21"/>
-<wire x1="1.8" y1="2.5" x2="1.8" y2="0.1" width="0.2032" layer="21"/>
-<wire x1="1.8" y1="0.1" x2="1.7" y2="0.1" width="0.2032" layer="21"/>
-<wire x1="-0.3" y1="2.5" x2="0.3" y2="2.5" width="0.2032" layer="21"/>
-<text x="-1" y="-1.58" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
+<smd name="2" x="0" y="-1.3" dx="1" dy="0.7" layer="1" rot="R90"/>
+<smd name="1" x="-1" y="-1.3" dx="1" dy="0.7" layer="1" rot="R90"/>
+<smd name="3" x="1" y="-1.3" dx="1" dy="0.7" layer="1" rot="R90"/>
+<smd name="5" x="-1" y="1.3" dx="1" dy="0.7" layer="1" rot="R90"/>
+<smd name="4" x="1" y="1.3" dx="1" dy="0.7" layer="1" rot="R90"/>
+<text x="-1" y="2.2" size="0.8128" layer="21" font="vector">&gt;NAME</text>
+<wire x1="-1.7" y1="1.2" x2="-1.8" y2="1.2" width="0.2032" layer="21"/>
+<wire x1="-1.8" y1="1.2" x2="-1.8" y2="-1.2" width="0.2032" layer="21"/>
+<wire x1="-1.8" y1="-1.2" x2="-1.7" y2="-1.2" width="0.2032" layer="21"/>
+<wire x1="1.7" y1="1.2" x2="1.8" y2="1.2" width="0.2032" layer="21"/>
+<wire x1="1.8" y1="1.2" x2="1.8" y2="-1.2" width="0.2032" layer="21"/>
+<wire x1="1.8" y1="-1.2" x2="1.7" y2="-1.2" width="0.2032" layer="21"/>
+<wire x1="-0.3" y1="1.2" x2="0.3" y2="1.2" width="0.2032" layer="21"/>
+<text x="-1" y="-2.88" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
 </package>
 <package name="FUSE_100MA">
-<smd name="P$1" x="0" y="0" dx="3.41" dy="1.5" layer="1" rot="R90"/>
-<smd name="P$2" x="4.572" y="0" dx="3.41" dy="1.5" layer="1" rot="R90"/>
-<wire x1="1.27" y1="1.524" x2="3.302" y2="1.524" width="0.3048" layer="21"/>
-<wire x1="1.27" y1="-1.524" x2="3.302" y2="-1.524" width="0.3048" layer="21"/>
-<text x="-0.762" y="2.032" size="1.016" layer="21" font="vector">&gt;NAME</text>
-<text x="-0.762" y="-3.048" size="1.016" layer="21" font="vector">&gt;VALUE</text>
+<smd name="P$1" x="-2.286" y="0" dx="3.41" dy="1.5" layer="1" rot="R90"/>
+<smd name="P$2" x="2.286" y="0" dx="3.41" dy="1.5" layer="1" rot="R90"/>
+<wire x1="-1.016" y1="1.524" x2="1.016" y2="1.524" width="0.3048" layer="21"/>
+<wire x1="-1.016" y1="-1.524" x2="1.016" y2="-1.524" width="0.3048" layer="21"/>
+<text x="-3.048" y="2.032" size="1.016" layer="21" font="vector">&gt;NAME</text>
+<text x="-3.048" y="-3.048" size="1.016" layer="21" font="vector">&gt;VALUE</text>
 </package>
 <package name="DO-214AA">
 <description>TVS diode package</description>
-<smd name="P$1" x="0" y="0" dx="1.62" dy="2.18" layer="1"/>
-<smd name="P$2" x="4.6" y="0" dx="1.62" dy="2.18" layer="1"/>
-<wire x1="1.3" y1="1" x2="1.3" y2="-1" width="0.2032" layer="21"/>
-<wire x1="1.3" y1="-1" x2="2.9" y2="0" width="0.2032" layer="21"/>
-<wire x1="2.9" y1="0" x2="1.3" y2="1" width="0.2032" layer="21"/>
-<wire x1="2.9" y1="1" x2="3.1" y2="1" width="0.2032" layer="21"/>
-<wire x1="3.1" y1="1" x2="3.1" y2="-1" width="0.2032" layer="21"/>
-<wire x1="3.1" y1="-1" x2="3.3" y2="-1" width="0.2032" layer="21"/>
-<text x="0.2" y="2.2" size="0.8128" layer="21" font="vector">&gt;NAME</text>
-<wire x1="0" y1="-1.9" x2="4.5" y2="-1.9" width="0.2032" layer="21"/>
-<wire x1="4.5" y1="-1.9" x2="4.5" y2="-1.5" width="0.2032" layer="21"/>
-<wire x1="0" y1="-1.9" x2="0" y2="-1.5" width="0.2032" layer="21"/>
-<wire x1="0" y1="1.5" x2="0" y2="1.9" width="0.2032" layer="21"/>
-<wire x1="0" y1="1.9" x2="4.5" y2="1.9" width="0.2032" layer="21"/>
-<wire x1="4.5" y1="1.9" x2="4.5" y2="1.5" width="0.2032" layer="21"/>
+<smd name="P$1" x="-2.3" y="0" dx="1.62" dy="2.18" layer="1"/>
+<smd name="P$2" x="2.3" y="0" dx="1.62" dy="2.18" layer="1"/>
+<wire x1="-1" y1="1" x2="-1" y2="-1" width="0.2032" layer="21"/>
+<wire x1="-1" y1="-1" x2="0.6" y2="0" width="0.2032" layer="21"/>
+<wire x1="0.6" y1="0" x2="-1" y2="1" width="0.2032" layer="21"/>
+<wire x1="0.6" y1="1" x2="0.8" y2="1" width="0.2032" layer="21"/>
+<wire x1="0.8" y1="1" x2="0.8" y2="-1" width="0.2032" layer="21"/>
+<wire x1="0.8" y1="-1" x2="1" y2="-1" width="0.2032" layer="21"/>
+<text x="-2.1" y="2.2" size="0.8128" layer="21" font="vector">&gt;NAME</text>
+<wire x1="-2.3" y1="-1.9" x2="2.2" y2="-1.9" width="0.2032" layer="21"/>
+<wire x1="2.2" y1="-1.9" x2="2.2" y2="-1.5" width="0.2032" layer="21"/>
+<wire x1="-2.3" y1="-1.9" x2="-2.3" y2="-1.5" width="0.2032" layer="21"/>
+<wire x1="-2.3" y1="1.5" x2="-2.3" y2="1.9" width="0.2032" layer="21"/>
+<wire x1="-2.3" y1="1.9" x2="2.2" y2="1.9" width="0.2032" layer="21"/>
+<wire x1="2.2" y1="1.9" x2="2.2" y2="1.5" width="0.2032" layer="21"/>
+</package>
+<package name="MOLEX-MICRO-FIT_10WAY">
+<pad name="P$1" x="0" y="-0.508" drill="1.016" diameter="1.778" shape="square"/>
+<pad name="P$2" x="-2.9972" y="-0.508" drill="1.016" diameter="1.778"/>
+<pad name="P$3" x="-5.9944" y="-0.508" drill="1.016" diameter="1.778"/>
+<pad name="P$4" x="-8.9916" y="-0.508" drill="1.016" diameter="1.778"/>
+<pad name="P$5" x="-11.9888" y="-0.508" drill="1.016" diameter="1.778"/>
+<pad name="P$10" x="-11.9888" y="2.4892" drill="1.016" diameter="1.778"/>
+<pad name="P$9" x="-8.9916" y="2.4892" drill="1.016" diameter="1.778"/>
+<pad name="P$8" x="-5.9944" y="2.4892" drill="1.016" diameter="1.778"/>
+<pad name="P$7" x="-2.9972" y="2.4892" drill="1.016" diameter="1.778"/>
+<pad name="P$6" x="0" y="2.4892" drill="1.016" diameter="1.778"/>
+<wire x1="4.699" y1="-9.398" x2="-16.51" y2="-9.398" width="0.127" layer="21"/>
+<wire x1="4.699" y1="1.016" x2="-16.51" y2="1.016" width="0.127" layer="21"/>
+<wire x1="-16.51" y1="-9.398" x2="-16.51" y2="1.016" width="0.127" layer="21"/>
+<wire x1="4.699" y1="-9.398" x2="4.699" y2="1.016" width="0.127" layer="21"/>
+<pad name="P$11" x="2.54" y="-5.08" drill="2.41"/>
+<pad name="P$12" x="-13.76" y="-5.08" drill="2.41"/>
+<text x="-8.46" y="-4.08" size="1.016" layer="21" font="vector">&gt;NAME</text>
+<text x="-8.46" y="-6.08" size="1.016" layer="21" font="vector">&gt;VALUE</text>
+</package>
+<package name="0603_SILKSCREEN">
+<smd name="0" x="-0.78105" y="0" dx="0.635" dy="0.889" layer="1"/>
+<smd name="1" x="0.78105" y="0" dx="0.635" dy="0.889" layer="1"/>
+<text x="-1.41605" y="1.905" size="0.8128" layer="21" font="vector">&gt;NAME</text>
+<wire x1="1.33985" y1="0.6604" x2="1.33985" y2="-0.6604" width="0.2032" layer="21"/>
+<wire x1="-1.35255" y1="-0.6604" x2="-1.35255" y2="0.6604" width="0.2032" layer="21"/>
+<wire x1="1.54305" y1="0.6604" x2="1.54305" y2="-0.6604" width="0.2032" layer="21"/>
+<wire x1="-1.35255" y1="-0.6604" x2="1.33985" y2="-0.6604" width="0.2032" layer="21"/>
+<wire x1="1.33985" y1="-0.6604" x2="1.54305" y2="-0.6604" width="0.2032" layer="21"/>
+<wire x1="-1.35255" y1="0.6604" x2="1.33985" y2="0.6604" width="0.2032" layer="21"/>
+<wire x1="1.33985" y1="0.6604" x2="1.54305" y2="0.6604" width="0.2032" layer="21"/>
+<text x="-1.40335" y="0.889" size="0.8128" layer="21" font="vector">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -867,7 +870,7 @@ http://fi.farnell.com/microchip/mcp2551-i-sn/ic-can-transceiver-hi-speed-smd/dp/
 <text x="0.508" y="0.508" size="1.27" layer="95">&gt;NAME</text>
 <text x="0.508" y="-1.778" size="1.27" layer="95">&gt;VALUE</text>
 </symbol>
-<symbol name="REGULATOR_LINEAR">
+<symbol name="REG_LP2985">
 <pin name="VIN" x="-5.08" y="2.54" length="short"/>
 <pin name="VOUT" x="17.78" y="2.54" length="short" rot="R180"/>
 <pin name="GND" x="-5.08" y="-2.54" length="short"/>
@@ -952,6 +955,10 @@ Tuotetiedot, asiakirjat ja muuta
 </connects>
 <technologies>
 <technology name="">
+<attribute name="FARNELL_ID" value="1756713" constant="no"/>
+<attribute name="MANUFACTURER_ID" value="43045-1023" constant="no"/>
+</technology>
+<technology name="SMD">
 <attribute name="FARNELL_ID" value="1513882" constant="no"/>
 <attribute name="MANUFACTURER_ID" value="43045-1006" constant="no"/>
 </technology>
@@ -1065,6 +1072,51 @@ http://www.farnell.com/datasheets/1874686.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="CAP_POL" prefix="C" uservalue="yes">
+<description>http://www.farnell.com/datasheets/1909355.pdf	&lt;br&gt;
+
+
+ PANASONIC ELECTRONIC COMPONENTS  EEE1JA101P  SMD Aluminium Electrolytic Capacitor, AEC-Q200 S Series, 100 µF, 63 V, Radial Can - SMD, 10 mm
+ Lisää suosikkeihin	
+ Huomasitko virheen?
+ Tulosta sivu
+PANASONIC ELECTRONIC COMPONENTS EEE1JA101P
+
+
+Suurenna napsauttamalla
+
+Kuva on vain kuvaavaa tarkoitusta varten. Lue tuotekuvaus tarkempia tietoja varten.
+PANASONIC ELECTRONIC COMPONENTS
+
+    Valmistaja PANASONIC ELECTRONIC COMPONENTS
+    Tilauskoodi: 2326162
+    Valmistajan osanumero EEE1JA101P
+
+     Technical Data Sheet (106.65KB) EN
+
+Tuotteen yleiskatsaus
+The EEE1JA101P is a surface-mount aluminium Electrolytic Capacitor features high reliability, long life, low impedance and high ripple current of the top-class in AL-E. The S-V series aluminium electrolytic capacitor is applied to an in-vehicle electric equipment and the anti-vibration type (more than Ø8mm) can support.
+
+    Sheathless (metal case) appearance
+    Polar polarity type
+
+Sovellukset
+Automotive; Industrial
+Back to top
+Tuotetiedot, asiakirjat ja muuta
+
+    Product Range AEC-Q200 S Series
+    Capacitance 100µF
+    Voltage Rating 63V
+    AE Capacitor Case Radial Can - SMD
+    Diameter 10mm
+    ESR -
+    Height 10.2mm
+    Ripple Current AC 60mA
+    Packaging Cut Tape
+    Lifetime @ Temperature 2000 hours @ 85°C
+    Operating Temperature Min -40°C
+    Operating Temperature Max 85°C
+    MSL</description>
 <gates>
 <gate name="G$1" symbol="CAP_POLY" x="0" y="0"/>
 </gates>
@@ -1102,7 +1154,13 @@ http://www.farnell.com/datasheets/1874686.pdf</description>
 <connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="DIAMETER" value="10mm" constant="no"/>
+<attribute name="FARNELL_ID" value="2326162" constant="no"/>
+<attribute name="HEIGHT" value="10.2mm" constant="no"/>
+<attribute name="MANUFACTURER_ID" value="EEE1JA101P" constant="no"/>
+<attribute name="VALUE" value="100uF" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -1662,7 +1720,7 @@ Tuotetiedot, asiakirjat ja muuta
     Output Voltage Nom.: 3.3V
     Packaging: Cut Tape</description>
 <gates>
-<gate name="G$1" symbol="REGULATOR_LINEAR" x="-7.62" y="0"/>
+<gate name="G$1" symbol="REG_LP2985" x="-7.62" y="0"/>
 </gates>
 <devices>
 <device name="_SOP5" package="SOP5">
@@ -1839,7 +1897,7 @@ The Transil SMBJ series from STMicroelectronics are transient voltage suppressin
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
-<part name="U$1" library="usevolt" deviceset="MOLEX_MICRO-FIT_10WAY" device="_SMD" value="JOYSTICK"/>
+<part name="U$1" library="usevolt" deviceset="MOLEX_MICRO-FIT_10WAY" device="_TH" value="JOYSTICK"/>
 <part name="F1" library="usevolt" deviceset="FUSE_MC36204_100MA" device="" value="300mA"/>
 <part name="D1" library="usevolt" deviceset="DIODE_TVS_SMBJ33A-TR" device="DO-214AA"/>
 <part name="C7" library="usevolt" deviceset="CAP" device="_0603" value="1u"/>
@@ -1862,11 +1920,11 @@ The Transil SMBJ series from STMicroelectronics are transient voltage suppressin
 <part name="D3" library="usevolt" deviceset="LED" device="_0603"/>
 <part name="C1" library="usevolt" deviceset="CAP" device="_0603" value="100n"/>
 <part name="VR1" library="usevolt" deviceset="LM2671" device="SOIC8"/>
-<part name="C2" library="usevolt" deviceset="CAP_POL" device="SMD_10X10X10MM" value="EEE1JA101P"/>
+<part name="C2" library="usevolt" deviceset="CAP_POL" device="SMD_10X10X10MM" value="100uF"/>
 <part name="D23" library="usevolt" deviceset="DIODE" device="DO219AB" value="RS07J-GS18"/>
 <part name="L1" library="usevolt" deviceset="INDUCTOR" device="BOURNS_10X13X5MM" value="SDR1005-101KL"/>
 <part name="C17" library="usevolt" deviceset="CAP" device="_0603" value="10nF"/>
-<part name="C18" library="usevolt" deviceset="CAP_POL" device="SMD_10X10X10MM" value="EEE1JA101P"/>
+<part name="C18" library="usevolt" deviceset="CAP_POL" device="SMD_10X10X10MM" value="100uF"/>
 <part name="D16" library="usevolt" deviceset="DIODE_ZENER" device="SDO123" value="PDZ3.3B,115"/>
 <part name="D17" library="usevolt" deviceset="DIODE_ZENER" device="SDO123" value="PDZ3.3B,115"/>
 <part name="D18" library="usevolt" deviceset="DIODE_ZENER" device="SDO123" value="PDZ3.3B,115"/>
