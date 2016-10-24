@@ -1,0 +1,41 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# WL-SMCW-150060BS75000-B-RESCUE-keypad
+#
+DEF ~WL-SMCW-150060BS75000-B-RESCUE-keypad D 0 40 N N 1 L N
+F0 "D" 9 3 45 H V L BNN
+F1 "WL-SMCW-150060BS75000-B-RESCUE-keypad" 11 -47 45 H I L BNN
+F2 "wurth_elektronik_LED_0603" 30 150 20 H I C CNN
+F3 "http://www.farnell.com/datasheets/1911343.pdf?_ga=1.259491274.1948984246.1460023966" 9 3 60 H I C CNN
+F4 "150060BS75000" 209 203 60 H I C CNN "Manufacturer Part Number"
+F5 "2322069" 409 403 60 H I C CNN "1st Source Part Number"
+F6 "Farnell" 309 303 60 H I C CNN "1st Source"
+F7 "WURTH ELEKTRONIK" 109 103 60 H I C CNN "Manufacturer"
+$FPLIST
+ *0603*
+ *0603*
+ *0603*
+ *0603*
+ *0603*
+ *0603*
+$ENDFPLIST
+DRAW
+P 2 1 0 0 -60 0 -100 0 N
+P 2 1 0 0 -60 0 -60 -40 N
+P 2 1 0 0 -60 0 0 40 N
+P 2 1 0 0 -60 50 -60 0 N
+P 2 1 0 0 -20 70 -20 90 N
+P 2 1 0 0 -20 90 -60 50 N
+P 2 1 0 0 -20 90 -40 90 N
+P 2 1 0 0 0 -40 -60 0 N
+P 2 1 0 0 0 40 0 -40 N
+P 2 1 0 0 20 70 20 90 N
+P 2 1 0 0 20 90 -20 50 N
+P 2 1 0 0 20 90 0 90 N
+X K 1 -200 0 100 R 40 40 1 1 B
+X A 2 100 0 100 L 40 40 1 1 B
+ENDDRAW
+ENDDEF
+#
+#End Library
