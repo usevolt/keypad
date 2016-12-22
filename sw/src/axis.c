@@ -1,0 +1,72 @@
+/*
+ * joystick_axis.c
+ *
+ *  Created on: Dec 22, 2016
+ *      Author: usevolt
+ */
+
+
+#include "axis.h"
+#include <uv_utilities.h>
+
+
+void axis_calib_start(axis_st *this) {
+	if (!this->calibrating) {
+		this->calib.max = ADC_MAX_VALUE / 2;
+		this->calib.min = ADC_MAX_VALUE / 2;
+		this->calib.middle = uv_adc_read_average(this->chn, ADC_AVG_COUNT * 10);
+	}
+	this->calibrating = true;
+}
+
+
+
+void axis_step(axis_st *this, uint16_t step_ms) {
+	int16_t val = uv_adc_read_average(this->chn, ADC_AVG_COUNT);
+	if (val > HAL_MAX_VALUE) {
+		this->value = 0;
+		this->err = ERROR_AXIS_SHORTCUT_TO_BATTERY;
+		return;
+	}
+	else if (val < HAL_MIN_VALUE) {
+		this->value = 0;
+		this->err = ERROR_AXIS_SHORTCUT_TO_GROUND;
+		return;
+	}
+	else {
+		this->err = ERROR_NONE;
+	}
+
+	if (!this->calibrating) {
+
+		if (val < this->calib.min) { val = this->calib.min; }
+		else if (val > this->calib.max) { val = this->calib.max; }
+
+		// upper part
+		if (val > this->calib.middle + AXIS_MIDDLE_THRESHOLD) {
+			this->value = uv_reli(val, this->calib.middle + AXIS_MIDDLE_THRESHOLD, this->calib.max);
+			this->value = (this->value * this->value) / 1000;
+			if (this->value > 1000) { this->value = 1000; }
+		}
+		// lower part
+		else if (val < this->calib.middle - AXIS_MIDDLE_THRESHOLD) {
+			this->value = uv_reli(val, this->calib.middle - AXIS_MIDDLE_THRESHOLD, this->calib.min);
+			this->value = -(this->value * this->value) / 1000;
+			if (this->value < -1000) { this->value = -1000; }
+		}
+		// center
+		else {
+			this->value = 0;
+		}
+	}
+	// calibration steps
+	else {
+		if (val > this->calib.max) {
+			this->calib.max = val;
+		}
+		if (val < this->calib.min) {
+			this->calib.min = val;
+		}
+		this->value = 0;
+	}
+}

@@ -163,7 +163,8 @@ F 0 "C1" H 1604 1359 45  0000 L BNN
 F 1 "100nF" H 1607 1302 45  0000 L BNN
 F 2 "kemet:0603" H 1730 1500 20  0001 C CNN
 F 3 "" H 1700 1350 60  0000 C CNN
-F 4 "C0603C104K5RACTU" H 1700 1350 60  0001 C CNN "Manufacturer Part Number"
+F 4 "KEMET" H 1700 1350 60  0001 C CNN "Manufacturer"
+F 5 "C0603C104K5RACTU" H 1700 1350 60  0001 C CNN "Manufacturer Part Number"
 	1    1700 1350
 	0    1    1    0   
 $EndComp
@@ -175,6 +176,8 @@ F 0 "C6" H 3304 1259 45  0000 L BNN
 F 1 "100nF" H 3307 1202 45  0000 L BNN
 F 2 "kemet:0603" H 3430 1400 20  0001 C CNN
 F 3 "" H 3400 1250 60  0000 C CNN
+F 4 "KEMET" H 3400 1250 60  0001 C CNN "Manufacturer"
+F 5 "C0603C104K5RACTU" H 3400 1250 60  0001 C CNN "Manufacturer Part Number"
 	1    3400 1250
 	1    0    0    -1  
 $EndComp
@@ -203,7 +206,8 @@ F 0 "C10" H 5804 1359 45  0000 L BNN
 F 1 "100nF" H 5807 1302 45  0000 L BNN
 F 2 "kemet:0603" H 5930 1500 20  0001 C CNN
 F 3 "" H 5900 1350 60  0000 C CNN
-F 4 "C0603C104K5RACTU" H 5900 1350 60  0001 C CNN "Manufacturer Part Number"
+F 4 "KEMET" H 5900 1350 60  0001 C CNN "Manufacturer"
+F 5 "C0603C104K5RACTU" H 5900 1350 60  0001 C CNN "Manufacturer Part Number"
 	1    5900 1350
 	0    -1   -1   0   
 $EndComp
@@ -277,7 +281,7 @@ Wire Wire Line
 Wire Wire Line
 	3200 1350 3250 1350
 Wire Wire Line
-	3250 1600 3250 1350
+	3250 1350 3250 1600
 Wire Wire Line
 	1300 1600 5250 1600
 Wire Wire Line
@@ -394,7 +398,8 @@ F 0 "C3" H 2204 3209 45  0000 L BNN
 F 1 "100nF" H 2207 3152 45  0000 L BNN
 F 2 "kemet:0603" H 2330 3350 20  0001 C CNN
 F 3 "" H 2300 3200 60  0000 C CNN
-F 4 "C0603C104K5RACTU" H 2300 3200 60  0001 C CNN "Manufacturer Part Number"
+F 4 "KEMET" H 2300 3200 60  0001 C CNN "Manufacturer"
+F 5 "C0603C104K5RACTU" H 2300 3200 60  0001 C CNN "Manufacturer Part Number"
 	1    2300 3200
 	0    1    1    0   
 $EndComp
@@ -455,7 +460,7 @@ Connection ~ 4050 3500
 Wire Wire Line
 	4100 3800 4050 3800
 Wire Wire Line
-	4050 3900 4050 3800
+	4050 3800 4050 3900
 Wire Wire Line
 	3700 3900 4100 3900
 $Comp
@@ -480,7 +485,8 @@ F 0 "C8" H 3854 3609 45  0000 L BNN
 F 1 "100nF" H 3857 3552 45  0000 L BNN
 F 2 "kemet:0603" H 3980 3750 20  0001 C CNN
 F 3 "" H 3950 3600 60  0000 C CNN
-F 4 "C0603C104K5RACTU" H 3950 3600 60  0001 C CNN "Manufacturer Part Number"
+F 4 "KEMET" H 3950 3600 60  0001 C CNN "Manufacturer"
+F 5 "C0603C104K5RACTU" H 3950 3600 60  0001 C CNN "Manufacturer Part Number"
 	1    3950 3600
 	0    1    1    0   
 $EndComp
@@ -492,7 +498,8 @@ F 0 "C7" H 3704 3609 45  0000 L BNN
 F 1 "100nF" H 3707 3552 45  0000 L BNN
 F 2 "kemet:0603" H 3830 3750 20  0001 C CNN
 F 3 "" H 3800 3600 60  0000 C CNN
-F 4 "C0603C104K5RACTU" H 3800 3600 60  0001 C CNN "Manufacturer Part Number"
+F 4 "KEMET" H 3800 3600 60  0001 C CNN "Manufacturer"
+F 5 "C0603C104K5RACTU" H 3800 3600 60  0001 C CNN "Manufacturer Part Number"
 	1    3800 3600
 	0    1    1    0   
 $EndComp
@@ -510,7 +517,8 @@ F 0 "C4" H 3054 3959 45  0000 L BNN
 F 1 "18pF" H 3057 3902 45  0000 L BNN
 F 2 "kemet:0603" H 3180 4100 20  0001 C CNN
 F 3 "" H 3150 3950 60  0000 C CNN
-F 4 "C0603C180J2GACTU" H 3150 3950 60  0001 C CNN "Manufacturer Part Number"
+F 4 "KEMET" H 3150 3950 60  0001 C CNN "Manufacturer"
+F 5 "C0603C180J2GACTU" H 3150 3950 60  0001 C CNN "Manufacturer Part Number"
 	1    3150 3950
 	1    0    0    -1  
 $EndComp
@@ -522,7 +530,8 @@ F 0 "C5" H 3054 4259 45  0000 L BNN
 F 1 "18pF" H 3057 4202 45  0000 L BNN
 F 2 "kemet:0603" H 3180 4400 20  0001 C CNN
 F 3 "" H 3150 4250 60  0000 C CNN
-F 4 "C0603C180J2GACTU" H 3150 4250 60  0001 C CNN "Manufacturer Part Number"
+F 4 "KEMET" H 3150 4250 60  0001 C CNN "Manufacturer"
+F 5 "C0603C180J2GACTU" H 3150 4250 60  0001 C CNN "Manufacturer Part Number"
 	1    3150 4250
 	1    0    0    -1  
 $EndComp
@@ -827,7 +836,7 @@ Wire Wire Line
 Wire Wire Line
 	3000 3950 3050 3950
 Wire Notes Line
-	750  600  6250 600 
+	750  600  7300 600 
 Wire Notes Line
 	750  600  750  2000
 Wire Notes Line
@@ -1251,12 +1260,8 @@ F 0 "D5" H 8370 3920 45  0000 L BNN
 F 1 "DIODE_LM2671" H 8370 3840 45  0000 L BNN
 F 2 "usevolt:DO219AB" H 8380 4050 20  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1902681.pdf?_ga=1.260423885.1948984246.1460023966" H 8370 3920 60  0001 C CNN
-F 4 "TEXAS INSTRUMENTS " H 8470 4020 60  0001 C CNN "Manufacturer"
-F 5 "LM2671MX-5.0/NOPB" H 8570 4120 60  0001 C CNN "Manufacturer Part Number"
-F 6 "Digi-Key" H 8670 4220 60  0001 C CNN "1st Source"
-F 7 "LM2671MX-5.0/NOPBCT-ND" H 8770 4320 60  0001 C CNN "1st Source Part Number"
-F 8 "Farnell" H 8870 4420 60  0001 C CNN "2nd Source"
-F 9 "2395920" H 8970 4520 60  0001 C CNN "2nd Source Part Number"
+F 4 "Vishay Semiconductor Diodes Division" H 8350 3900 60  0001 C CNN "Manufacturer"
+F 5 "RS07J-GS18" H 8570 4120 60  0001 C CNN "Manufacturer Part Number"
 	1    8350 3900
 	0    -1   -1   0   
 $EndComp
@@ -1268,12 +1273,8 @@ F 0 "D6" H 8520 3970 45  0000 L BNN
 F 1 "DIODE_LM2671" H 8520 3890 45  0000 L BNN
 F 2 "usevolt:DO219AB" H 8530 4100 20  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1902681.pdf?_ga=1.260423885.1948984246.1460023966" H 8520 3970 60  0001 C CNN
-F 4 "TEXAS INSTRUMENTS " H 8620 4070 60  0001 C CNN "Manufacturer"
-F 5 "LM2671MX-5.0/NOPB" H 8720 4170 60  0001 C CNN "Manufacturer Part Number"
-F 6 "Digi-Key" H 8820 4270 60  0001 C CNN "1st Source"
-F 7 "LM2671MX-5.0/NOPBCT-ND" H 8920 4370 60  0001 C CNN "1st Source Part Number"
-F 8 "Farnell" H 9020 4470 60  0001 C CNN "2nd Source"
-F 9 "2395920" H 9120 4570 60  0001 C CNN "2nd Source Part Number"
+F 4 "Vishay Semiconductor Diodes Division" H 8500 3950 60  0001 C CNN "Manufacturer"
+F 5 "RS07J-GS18" H 8720 4170 60  0001 C CNN "Manufacturer Part Number"
 	1    8500 3950
 	0    -1   -1   0   
 $EndComp
@@ -1285,12 +1286,8 @@ F 0 "D7" H 8670 4020 45  0000 L BNN
 F 1 "DIODE_LM2671" H 8670 3940 45  0000 L BNN
 F 2 "usevolt:DO219AB" H 8680 4150 20  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1902681.pdf?_ga=1.260423885.1948984246.1460023966" H 8670 4020 60  0001 C CNN
-F 4 "TEXAS INSTRUMENTS " H 8770 4120 60  0001 C CNN "Manufacturer"
-F 5 "LM2671MX-5.0/NOPB" H 8870 4220 60  0001 C CNN "Manufacturer Part Number"
-F 6 "Digi-Key" H 8970 4320 60  0001 C CNN "1st Source"
-F 7 "LM2671MX-5.0/NOPBCT-ND" H 9070 4420 60  0001 C CNN "1st Source Part Number"
-F 8 "Farnell" H 9170 4520 60  0001 C CNN "2nd Source"
-F 9 "2395920" H 9270 4620 60  0001 C CNN "2nd Source Part Number"
+F 4 "Vishay Semiconductor Diodes Division" H 8650 4000 60  0001 C CNN "Manufacturer"
+F 5 "RS07J-GS18" H 8870 4220 60  0001 C CNN "Manufacturer Part Number"
 	1    8650 4000
 	0    -1   -1   0   
 $EndComp

@@ -281,7 +281,7 @@ Wire Wire Line
 Wire Wire Line
 	3200 1350 3250 1350
 Wire Wire Line
-	3250 1600 3250 1350
+	3250 1350 3250 1600
 Wire Wire Line
 	1300 1600 5250 1600
 Wire Wire Line
@@ -460,7 +460,7 @@ Connection ~ 4050 3500
 Wire Wire Line
 	4100 3800 4050 3800
 Wire Wire Line
-	4050 3900 4050 3800
+	4050 3800 4050 3900
 Wire Wire Line
 	3700 3900 4100 3900
 $Comp
@@ -1177,12 +1177,8 @@ F 0 "D3" H 3820 1320 45  0000 L BNN
 F 1 "DIODE_LM2671" H 3820 1240 45  0000 L BNN
 F 2 "usevolt:DO219AB" H 3830 1450 20  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1902681.pdf?_ga=1.260423885.1948984246.1460023966" H 3820 1320 60  0001 C CNN
-F 4 "TEXAS INSTRUMENTS " H 3920 1420 60  0001 C CNN "Manufacturer"
-F 5 "LM2671MX-5.0/NOPB" H 4020 1520 60  0001 C CNN "Manufacturer Part Number"
-F 6 "Digi-Key" H 4120 1620 60  0001 C CNN "1st Source"
-F 7 "LM2671MX-5.0/NOPBCT-ND" H 4220 1720 60  0001 C CNN "1st Source Part Number"
-F 8 "Farnell" H 4320 1820 60  0001 C CNN "2nd Source"
-F 9 "2395920" H 4420 1920 60  0001 C CNN "2nd Source Part Number"
+F 4 "Vishay Semiconductor Diodes Division" H 3920 1420 60  0001 C CNN "Manufacturer"
+F 5 "RS07J-GS18" H 3800 1300 60  0001 C CNN "Manufacturer Part Number"
 	1    3800 1300
 	0    -1   -1   0   
 $EndComp
@@ -1260,12 +1256,8 @@ F 0 "D5" H 8370 3920 45  0000 L BNN
 F 1 "DIODE_LM2671" H 8370 3840 45  0000 L BNN
 F 2 "usevolt:DO219AB" H 8380 4050 20  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1902681.pdf?_ga=1.260423885.1948984246.1460023966" H 8370 3920 60  0001 C CNN
-F 4 "TEXAS INSTRUMENTS " H 8470 4020 60  0001 C CNN "Manufacturer"
-F 5 "LM2671MX-5.0/NOPB" H 8570 4120 60  0001 C CNN "Manufacturer Part Number"
-F 6 "Digi-Key" H 8670 4220 60  0001 C CNN "1st Source"
-F 7 "LM2671MX-5.0/NOPBCT-ND" H 8770 4320 60  0001 C CNN "1st Source Part Number"
-F 8 "Farnell" H 8870 4420 60  0001 C CNN "2nd Source"
-F 9 "2395920" H 8970 4520 60  0001 C CNN "2nd Source Part Number"
+F 4 "Vishay Semiconductor Diodes Division" H 8350 3900 60  0001 C CNN "Manufacturer"
+F 5 "RS07J-GS18" H 8570 4120 60  0001 C CNN "Manufacturer Part Number"
 	1    8350 3900
 	0    -1   -1   0   
 $EndComp
@@ -1277,12 +1269,8 @@ F 0 "D6" H 8520 3970 45  0000 L BNN
 F 1 "DIODE_LM2671" H 8520 3890 45  0000 L BNN
 F 2 "usevolt:DO219AB" H 8530 4100 20  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1902681.pdf?_ga=1.260423885.1948984246.1460023966" H 8520 3970 60  0001 C CNN
-F 4 "TEXAS INSTRUMENTS " H 8620 4070 60  0001 C CNN "Manufacturer"
-F 5 "LM2671MX-5.0/NOPB" H 8720 4170 60  0001 C CNN "Manufacturer Part Number"
-F 6 "Digi-Key" H 8820 4270 60  0001 C CNN "1st Source"
-F 7 "LM2671MX-5.0/NOPBCT-ND" H 8920 4370 60  0001 C CNN "1st Source Part Number"
-F 8 "Farnell" H 9020 4470 60  0001 C CNN "2nd Source"
-F 9 "2395920" H 9120 4570 60  0001 C CNN "2nd Source Part Number"
+F 4 "Vishay Semiconductor Diodes Division" H 8500 3950 60  0001 C CNN "Manufacturer"
+F 5 "RS07J-GS18" H 8720 4170 60  0001 C CNN "Manufacturer Part Number"
 	1    8500 3950
 	0    -1   -1   0   
 $EndComp
@@ -1294,12 +1282,8 @@ F 0 "D7" H 8670 4020 45  0000 L BNN
 F 1 "DIODE_LM2671" H 8670 3940 45  0000 L BNN
 F 2 "usevolt:DO219AB" H 8680 4150 20  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1902681.pdf?_ga=1.260423885.1948984246.1460023966" H 8670 4020 60  0001 C CNN
-F 4 "TEXAS INSTRUMENTS " H 8770 4120 60  0001 C CNN "Manufacturer"
-F 5 "LM2671MX-5.0/NOPB" H 8870 4220 60  0001 C CNN "Manufacturer Part Number"
-F 6 "Digi-Key" H 8970 4320 60  0001 C CNN "1st Source"
-F 7 "LM2671MX-5.0/NOPBCT-ND" H 9070 4420 60  0001 C CNN "1st Source Part Number"
-F 8 "Farnell" H 9170 4520 60  0001 C CNN "2nd Source"
-F 9 "2395920" H 9270 4620 60  0001 C CNN "2nd Source Part Number"
+F 4 "Vishay Semiconductor Diodes Division" H 8650 4000 60  0001 C CNN "Manufacturer"
+F 5 "RS07J-GS18" H 8870 4220 60  0001 C CNN "Manufacturer Part Number"
 	1    8650 4000
 	0    -1   -1   0   
 $EndComp
