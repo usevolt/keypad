@@ -1,3 +1,0 @@
-[submodule "sw/hal/hal"]
-	path = sw/hal/hal
-	url = ssh://u33867@sftp.shellit.org/home/u33867/version_control/public/hal
