@@ -37,6 +37,7 @@
 
 
 #define CONFIG_CAN							1
+#define CONFIG_CAN1							1
 #define CONFIG_CAN_LOG						0
 #define CONFIG_CAN_ERROR_LOG				0
 #define CONFIG_CAN1_RX_BUFFER_SIZE			4
