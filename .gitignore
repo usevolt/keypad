@@ -1,5 +1,5 @@
 sw/Debug
-sw/release
+sw/release/
 sw/keypad.axf
 sw/keypad.bin
 sw/keypad.hex
