@@ -1,17 +1,5 @@
 sw/Debug
-
-sw/left_0_5
-sw/right_0_6
-
-sw/left_1_0
-sw/right_1_0
-
-sw/left_1_1
-sw/right_1_1
-
-sw/left_3_1
-sw/right_3_1
-
+sw/release
 sw/keypad.axf
 sw/keypad.bin
 sw/keypad.hex
@@ -21,3 +9,6 @@ sw/keypad_r.hex
 sw/keypad_l.axf
 sw/keypad_l.bin
 sw/keypad_l.hex
+sw/keypad.map
+sw/keypad_r.map
+sw/keypad_l.map
