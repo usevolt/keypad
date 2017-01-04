@@ -5,13 +5,13 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.crt.advproject.config.exe.debug.1570009020.564626756.1918317511" moduleId="org.eclipse.cdt.core.settings" name="right_3_1">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
-					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -74,7 +74,7 @@
 								<option id="com.crt.advproject.link.gcc.hdrlib.162913573" name="Library" superClass="com.crt.advproject.link.gcc.hdrlib" value="com.crt.advproject.gcc.link.hdrlib.codered.none" valueType="enumerated"/>
 								<option id="gnu.c.link.option.libs.753630596" name="Libraries (-l)" superClass="gnu.c.link.option.libs"/>
 								<option id="gnu.c.link.option.paths.1960025298" name="Library search path (-L)" superClass="gnu.c.link.option.paths"/>
-								<option id="com.crt.advproject.link.crpenable.346165723" name="Enable Code Read Protect" superClass="com.crt.advproject.link.crpenable" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.link.crpenable.346165723" name="Enable Code Read Protection" superClass="com.crt.advproject.link.crpenable" value="true" valueType="boolean"/>
 								<option id="com.crt.advproject.link.gcc.multicore.slave.214152850" name="Multicore configuration" superClass="com.crt.advproject.link.gcc.multicore.slave"/>
 								<option id="com.crt.advproject.link.stackOffset.575980544" name="Stack offset" superClass="com.crt.advproject.link.stackOffset" value="0" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.354512867" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
@@ -98,13 +98,13 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.crt.advproject.config.exe.debug.1570009020.564626756.1918317511.1150189946" moduleId="org.eclipse.cdt.core.settings" name="left_3_1">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
-					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -236,28 +236,28 @@
 &lt;/TargetConfig&gt;</projectStorage>
 	</storageModule>
 	<storageModule moduleId="refreshScope" versionNumber="2">
-		<configuration configurationName="Release">
-			<resource resourceType="PROJECT" workspacePath="/tj_keypad"/>
-		</configuration>
-		<configuration configurationName="right_3_1"/>
-		<configuration configurationName="right_0_6"/>
-		<configuration configurationName="left_1_1">
+		<configuration configurationName="right_1_0">
 			<resource resourceType="PROJECT" workspacePath="/uw_keypad"/>
 		</configuration>
-		<configuration configurationName="left_0_5">
+		<configuration configurationName="right_0_6"/>
+		<configuration configurationName="prototype_0_2"/>
+		<configuration configurationName="left_1_1">
 			<resource resourceType="PROJECT" workspacePath="/uw_keypad"/>
 		</configuration>
 		<configuration configurationName="left_1_0">
 			<resource resourceType="PROJECT" workspacePath="/uw_keypad"/>
 		</configuration>
-		<configuration configurationName="prototype_0_2"/>
-		<configuration configurationName="right_1_0">
-			<resource resourceType="PROJECT" workspacePath="/uw_keypad"/>
+		<configuration configurationName="left_3_1"/>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/tj_keypad"/>
 		</configuration>
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/tj_keypad"/>
 		</configuration>
-		<configuration configurationName="left_3_1"/>
+		<configuration configurationName="right_3_1"/>
+		<configuration configurationName="left_0_5">
+			<resource resourceType="PROJECT" workspacePath="/uw_keypad"/>
+		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="scannerConfiguration">
