@@ -82,6 +82,8 @@ void keypad_init(void *me) {
 		uv_memory_save(&this->data_start, &this->data_end);
 	}
 
+	uv_canopen_set_state(&this->canopen, CANOPEN_OPERATIONAL);
+
 }
 
 
