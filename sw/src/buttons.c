@@ -9,20 +9,31 @@
 #include <buttons.h>
 #include <stdlib.h>
 
-void button_step(uv_button_st *this, bool gpio_value) {
-	this->pressed = false;
-	this->released = false;
-	if (gpio_value == false) {
-		if (!this->is_down) {
-			this->pressed = true;
+#define IS_DOWN(x)			(!x)
+
+#define VALUE_POS			(127)
+#define VALUE_NEG			(-127)
+
+void button_step(uv_button_st *this, bool gpio_pos, bool gpio_neg) {
+	this->pressed = 0;
+	this->released = 0;
+	if (IS_DOWN(gpio_pos)) {
+		if (!this->is_down || this->is_down == VALUE_NEG) {
+			this->pressed = VALUE_POS;
 		}
-		this->is_down = true;
+		this->is_down = VALUE_POS;
+	}
+	else if (IS_DOWN(gpio_neg)) {
+		if (!this->is_down || this->is_down == VALUE_POS) {
+			this->pressed = VALUE_NEG;
+		}
+		this->is_down = VALUE_NEG;
 	}
 	else {
 		if (this->is_down) {
-			this->released = true;
+			this->released = this->is_down;
 		}
-		this->is_down = false;
+		this->is_down = 0;
 	}
 
 }

@@ -24,15 +24,13 @@ BUILDDIR := release
 # Name of the produced binary firmware
 BINARY := keypad
 
-# name of the CMSIS directory. Should be in the same directory as this makefile
-CMSIS := CMSIS_CORE_LPC11xx
-
 # List of include directories
 INCLUDEDIRS := 	-I"./inc/" \
 				-I"./CMSIS_CORE_LPC11xx/inc/" \
 				-I"./hal/uv_hal/inc" \
 				-I"./hal/uv_hal/freertos/include" \
-				-I"./hal/uv_hal/freertos/portable/GCC/ARM_CM0"
+				-I"./hal/uv_hal/freertos/portable/GCC/ARM_CM0"\
+				-I"./hal/CMSIS_CORE_LPC11xx/inc"
 
 
 ### END OF APP CONFIG ###
@@ -49,7 +47,7 @@ APP_NAME := $(shell basename `git rev-parse --show-toplevel`)
 FULL_NAME := $(APP_NAME)_$(GIT_VERSION)
 
 
-CFLAGS := -DDEBUG -D__CODE_RED -DCORE_M0 -D__USE_CMSIS=$(CMSIS) -D__UV_PROJECT_NAME=$(FULL_NAME) -D__NEWLIB__ $(INCLUDEDIRS) -$(O) -g3 -Wall -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=$(MCPU) -mthumb
+CFLAGS := -DCORE_M0 -D__NEWLIB__ $(INCLUDEDIRS) -$(O) -g3 -Wall -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=$(MCPU) -mthumb
 
 
 LDFLAGS := -nostdlib -Xlinker -Map="$(BUILDDIR)/$(APP_NAME).map" -Xlinker --cref -Xlinker --gc-sections -mcpu=$(MCPU) -mthumb -T "$(APP_NAME).ld" -D__UV_APP_VERSION=\"$(GIT_VERSION)\"
@@ -60,10 +58,24 @@ OBJECTS := $(addprefix $(BUILDDIR)/,$(SOURCES:%.c=%.o))
 # List of object dependencies
 DEPS := $(OBJECTS:.o=.d)
 
+default:
+	@echo "\n**************************"
+	@echo "Error: Target not defined."
+	@echo "**************************\n"
+	@echo " Please use either 'make left' or 'make right'"
 
 
-all: $(BINARY)
+left:	CFLAGS += -DLEFT -D__UV_PROJECT_NAME=$(APP_NAME)_LEFT_$(GIT_VERSION)
+left: LDFLAGS += -DLEFT
+left: $(BINARY)
 	$(MAKE) post-build
+
+
+right:	CFLAGS += -DRIGHT -D__UV_PROJECT_NAME=$(APP_NAME)_RIGHT_$(GIT_VERSION)
+right: LDFLAGS += -DRIGHT
+right: $(BINARY)
+	$(MAKE) post-build
+
 
 $(BINARY): $(OBJECTS)
 	@echo ""

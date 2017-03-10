@@ -44,6 +44,8 @@ keypad_st keypad;
 
 void keypad_init(void *me) {
 
+	__enable_irq();
+	uv_gpio_init_output(LED_1_PIN, true);
 	// init terminal
 	uv_terminal_init(terminal_commands, terminal_commands_size());
 
@@ -51,25 +53,35 @@ void keypad_init(void *me) {
 	uv_canopen_init(&keypad.canopen, obj_dict, object_dictionary_size(),
 			CAN1, &keypad.canopen_heatbeat_delay, NULL, NULL);
 
+
 	axis_init(&this->joy_x, JOYSTICK_X_ANALOG_CHANNEL);
 	axis_init(&this->joy_y, JOYSTICK_Y_ANALOG_CHANNEL);
 	axis_init(&this->joy_z, JOYSTICK_Z_ANALOG_CHANNEL);
 	this->joy_errors = ERROR_NONE;
 
-	BUTTON_INIT(&this->b1, BUTTON_1_PIN);
-	BUTTON_INIT(&this->b2, BUTTON_2_PIN);
-	BUTTON_INIT(&this->b3, BUTTON_3_PIN);
-	BUTTON_INIT(&this->b4, BUTTON_4_PIN);
-	BUTTON_INIT(&this->b5, BUTTON_5_PIN);
-	BUTTON_INIT(&this->b6, BUTTON_6_PIN);
-	BUTTON_INIT(&this->b7, BUTTON_7_PIN);
-	BUTTON_INIT(&this->b8, BUTTON_8_PIN);
-	BUTTON_INIT(&this->b9, BUTTON_9_PIN);
-	BUTTON_INIT(&this->b10, BUTTON_10_PIN);
-	BUTTON_INIT(&this->b11, BUTTON_11_PIN);
-	BUTTON_INIT(&this->b12, BUTTON_12_PIN);
-	BUTTON_INIT(&this->b13, BUTTON_13_PIN);
-	BUTTON_INIT(&this->b14, BUTTON_14_PIN);
+	uv_gpio_init_input(BUTTON_1_POS_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_1_NEG_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_2_POS_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_2_NEG_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_3_POS_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_3_NEG_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_4_POS_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_4_NEG_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_5_POS_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_5_NEG_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_6_POS_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_6_NEG_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_7_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_8_PIN, PULL_UP_ENABLED);
+
+	BUTTON_INIT(&this->b1);
+	BUTTON_INIT(&this->b2);
+	BUTTON_INIT(&this->b3);
+	BUTTON_INIT(&this->b4);
+	BUTTON_INIT(&this->b5);
+	BUTTON_INIT(&this->b6);
+	BUTTON_INIT(&this->b7);
+	BUTTON_INIT(&this->b8);
 
 	if (uv_memory_load(&this->data_start, &this->data_end)) {
 		axis_reset(&this->joy_x, JOYSTICK_X_ANALOG_CHANNEL);
@@ -82,7 +94,6 @@ void keypad_init(void *me) {
 		uv_memory_save(&this->data_start, &this->data_end);
 	}
 
-	uv_canopen_set_state(&this->canopen, CANOPEN_OPERATIONAL);
 
 }
 
@@ -94,13 +105,15 @@ void keypad_step(void* me) {
 	while (true) {
 		uint32_t step_ms = 20;
 
-		uv_can_step(CAN1, step_ms);
 		uv_canopen_step(&this->canopen, step_ms);
+
 
 		uv_terminal_step();
 
+
 		//update watchdog timer value to prevent a hard reset
 		uv_wdt_update();
+
 
 		if (this->state == STATE_AXIS_CALIB) {
 			axis_calib_start(&this->joy_x);
@@ -119,25 +132,14 @@ void keypad_step(void* me) {
 		axis_step(&this->joy_y, step_ms);
 		axis_step(&this->joy_z, step_ms);
 
-		this->joy_errors = 0;
-		this->joy_errors |= (axis_get_error(&this->joy_x));
-		this->joy_errors |= (axis_get_error(&this->joy_y) << 2);
-		this->joy_errors |= (axis_get_error(&this->joy_z) << 2);
-
-		button_step(&this->b1, uv_gpio_get(BUTTON_1_PIN));
-		button_step(&this->b2, uv_gpio_get(BUTTON_2_PIN));
-		button_step(&this->b3, uv_gpio_get(BUTTON_3_PIN));
-		button_step(&this->b4, uv_gpio_get(BUTTON_4_PIN));
-		button_step(&this->b5, uv_gpio_get(BUTTON_5_PIN));
-		button_step(&this->b6, uv_gpio_get(BUTTON_6_PIN));
-		button_step(&this->b7, uv_gpio_get(BUTTON_7_PIN));
-		button_step(&this->b8, uv_gpio_get(BUTTON_8_PIN));
-		button_step(&this->b9, uv_gpio_get(BUTTON_9_PIN));
-		button_step(&this->b10, uv_gpio_get(BUTTON_10_PIN));
-		button_step(&this->b11, uv_gpio_get(BUTTON_11_PIN));
-		button_step(&this->b12, uv_gpio_get(BUTTON_12_PIN));
-		button_step(&this->b13, uv_gpio_get(BUTTON_13_PIN));
-		button_step(&this->b14, uv_gpio_get(BUTTON_14_PIN));
+		button_step(&this->b1, uv_gpio_get(BUTTON_1_POS_PIN), uv_gpio_get(BUTTON_1_NEG_PIN));
+		button_step(&this->b2, uv_gpio_get(BUTTON_2_POS_PIN), uv_gpio_get(BUTTON_2_NEG_PIN));
+		button_step(&this->b3, uv_gpio_get(BUTTON_3_POS_PIN), uv_gpio_get(BUTTON_3_NEG_PIN));
+		button_step(&this->b4, uv_gpio_get(BUTTON_4_POS_PIN), uv_gpio_get(BUTTON_4_NEG_PIN));
+		button_step(&this->b5, uv_gpio_get(BUTTON_5_POS_PIN), uv_gpio_get(BUTTON_5_NEG_PIN));
+		button_step(&this->b6, uv_gpio_get(BUTTON_6_POS_PIN), uv_gpio_get(BUTTON_6_NEG_PIN));
+		button_step(&this->b7, uv_gpio_get(BUTTON_7_PIN), 1);
+		button_step(&this->b8, uv_gpio_get(BUTTON_8_PIN), 1);
 
 		this->buttons_is_down = 0;
 		this->buttons_pressed = 0;
@@ -162,6 +164,7 @@ void keypad_step(void* me) {
 						this->buttons_is_down, this->buttons_pressed, this->buttons_released);
 			}
 		}
+
 
 		static uint8_t ledi = 0;
 		ledi++;
@@ -197,8 +200,6 @@ void keypad_step(void* me) {
 
 int main(void) {
 
-	uv_gpio_init_output(LED_1_PIN, true);
-
 	/*** Interrupt priorities ****/
 	//16-bit timer 0 is used for PWM, it has the highest priority
 	// CAN priority is second highest
@@ -209,7 +210,7 @@ int main(void) {
 
 	uv_init(&keypad);
 
-	uv_rtos_task_create(keypad_step, "step", UV_RTOS_MIN_STACK_SIZE * 4, &keypad,
+	uv_rtos_task_create(keypad_step, "step", UV_RTOS_MIN_STACK_SIZE * 6, &keypad,
 			UV_RTOS_IDLE_PRIORITY + 1, NULL);
 
 	uv_rtos_start_scheduler();

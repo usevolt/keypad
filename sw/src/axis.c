@@ -44,15 +44,17 @@ void axis_step(axis_st *this, uint16_t step_ms) {
 
 		// upper part
 		if (val > this->calib.middle + AXIS_MIDDLE_THRESHOLD) {
-			this->value = uv_reli(val, this->calib.middle + AXIS_MIDDLE_THRESHOLD, this->calib.max);
-			this->value = (this->value * this->value) / 1000;
-			if (this->value > 1000) { this->value = 1000; }
+			int16_t value = uv_reli(val, this->calib.middle + AXIS_MIDDLE_THRESHOLD, this->calib.max);
+			value = (value * value) / 1000;
+			if (value > 1000) { value = 1000; }
+			this->value = value * AXIS_VALUE_MAX / 1000;
 		}
 		// lower part
 		else if (val < this->calib.middle - AXIS_MIDDLE_THRESHOLD) {
-			this->value = uv_reli(val, this->calib.middle - AXIS_MIDDLE_THRESHOLD, this->calib.min);
-			this->value = -(this->value * this->value) / 1000;
-			if (this->value < -1000) { this->value = -1000; }
+			int16_t value = uv_reli(val, this->calib.middle - AXIS_MIDDLE_THRESHOLD, this->calib.min);
+			value = -(value * value) / 1000;
+			if (value < -1000) { value = -1000; }
+			this->value = value * AXIS_VALUE_MAX / 1000;
 		}
 		// center
 		else {
@@ -66,6 +68,12 @@ void axis_step(axis_st *this, uint16_t step_ms) {
 		}
 		if (val < this->calib.min) {
 			this->calib.min = val;
+		}
+		if (val > HAL_MAX_VALUE) {
+			this->calib.max = HAL_MAX_VALUE - 1;
+		}
+		if (val < HAL_MIN_VALUE) {
+			this->calib.min = HAL_MIN_VALUE + 1;
 		}
 		this->value = 0;
 	}

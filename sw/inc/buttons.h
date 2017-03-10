@@ -14,20 +14,20 @@
 
 
 typedef struct {
-	bool is_down;
-	bool pressed;
-	bool released;
+	int8_t is_down;
+	int8_t pressed;
+	int8_t released;
+	int8_t clicked;
 } uv_button_st;
 
 
-#define BUTTON_INIT(button_ptr, gpio) \
+#define BUTTON_INIT(button_ptr) \
 		((uv_button_st*) button_ptr)->is_down = false; \
 		((uv_button_st*) button_ptr)->pressed = false; \
-		((uv_button_st*) button_ptr)->released = false; \
-		uv_gpio_init_input(gpio, PULL_UP_ENABLED)
+		((uv_button_st*) button_ptr)->released = false
 
 
-void button_step(uv_button_st *this, bool gpio_value);
+void button_step(uv_button_st *this, bool gpio_value, bool gpio_value_neg);
 
 
 static inline bool button_is_down(uv_button_st* b) {

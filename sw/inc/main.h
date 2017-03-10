@@ -21,6 +21,8 @@
 #include "messages.h"
 
 
+
+
 typedef enum {
 	STATE_RUNNING = 0,
 	STATE_AXIS_CALIB,
@@ -48,12 +50,6 @@ typedef struct {
 	uv_button_st b6;
 	uv_button_st b7;
 	uv_button_st b8;
-	uv_button_st b9;
-	uv_button_st b10;
-	uv_button_st b11;
-	uv_button_st b12;
-	uv_button_st b13;
-	uv_button_st b14;
 
 	int canopen_heatbeat_delay;
 

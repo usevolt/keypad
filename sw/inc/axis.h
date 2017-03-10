@@ -18,6 +18,8 @@
 #define HAL_MAX_VALUE			(ADC_MAX_VALUE * 0.95f)
 #define HAL_MIN_VALUE			(ADC_MAX_VALUE * 0.05f)
 
+#define AXIS_VALUE_MAX			(127)
+#define AXIS_VALUE_MIN			(-127)
 
 enum {
 	ERROR_NONE = 0,
@@ -27,7 +29,7 @@ enum {
 typedef uint8_t axis_errors_e;
 
 typedef struct {
-	int16_t value;
+	int8_t value;
 	struct calib {
 		uint16_t min;
 		uint16_t max;

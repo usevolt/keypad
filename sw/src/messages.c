@@ -48,7 +48,7 @@ const uv_canopen_object_st obj_dict[] = {
 				.main_index = 0x2010,
 				.sub_index = 0,
 				.permissions = CANOPEN_RO,
-				.type = CANOPEN_UNSIGNED16,
+				.type = CANOPEN_SIGNED8,
 				.data_ptr = (uint8_t*) &keypad.joy_x.value
 		},
 		{
@@ -56,7 +56,7 @@ const uv_canopen_object_st obj_dict[] = {
 				.main_index = 0x2011,
 				.sub_index = 0,
 				.permissions = CANOPEN_RO,
-				.type = CANOPEN_UNSIGNED16,
+				.type = CANOPEN_SIGNED8,
 				.data_ptr = (uint8_t*) &keypad.joy_y.value
 		},
 		{
@@ -64,7 +64,7 @@ const uv_canopen_object_st obj_dict[] = {
 				.main_index = 0x2012,
 				.sub_index = 0,
 				.permissions = CANOPEN_RO,
-				.type = CANOPEN_UNSIGNED16,
+				.type = CANOPEN_SIGNED8,
 				.data_ptr = (uint8_t*) &keypad.joy_z.value
 		},
 		{
@@ -140,12 +140,28 @@ const uv_canopen_object_st obj_dict[] = {
 				.data_ptr = (uint8_t*) &keypad.joy_z.calib.max
 		},
 		{
-				// joystick axis errors
+				// joystick X axis errors
 				.main_index = 0x2030,
 				.sub_index = 0,
 				.permissions = CANOPEN_RO,
 				.type = CANOPEN_UNSIGNED8,
-				.data_ptr = (uint8_t*) &keypad.joy_errors
+				.data_ptr = (uint8_t*) &keypad.joy_x.err
+		},
+		{
+				// joystick Y axis errors
+				.main_index = 0x2031,
+				.sub_index = 0,
+				.permissions = CANOPEN_RO,
+				.type = CANOPEN_UNSIGNED8,
+				.data_ptr = (uint8_t*) &keypad.joy_y.err
+		},
+		{
+				// joystick Z axis errors
+				.main_index = 0x2032,
+				.sub_index = 0,
+				.permissions = CANOPEN_RO,
+				.type = CANOPEN_UNSIGNED8,
+				.data_ptr = (uint8_t*) &keypad.joy_z.err
 		},
 		{
 				// axis calibration request
