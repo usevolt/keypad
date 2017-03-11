@@ -20,154 +20,154 @@ extern keypad_st keypad;
 // Defining the struct is necessary for IAP programming to work!
 const uv_canopen_object_st obj_dict[] = {
 		{
-				// buttons is down
-				.main_index = 0x2000,
-				.sub_index = 0,
-				.permissions = CANOPEN_RO,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.buttons_is_down
-		},
-		{
-				// buttons pressed
+				// button 1
 				.main_index = 0x2001,
-				.sub_index = 0,
+				.array_max_size = BUTTON_ARRAY_SIZE,
 				.permissions = CANOPEN_RO,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.buttons_pressed
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.b1
 		},
 		{
-				// buttons released
+				// button 2
 				.main_index = 0x2002,
-				.sub_index = 0,
+				.array_max_size = BUTTON_ARRAY_SIZE,
 				.permissions = CANOPEN_RO,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.buttons_released
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.b2
+		},
+		{
+				// button 3
+				.main_index = 0x2003,
+				.array_max_size = BUTTON_ARRAY_SIZE,
+				.permissions = CANOPEN_RO,
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.b3
+		},
+		{
+				// button 4
+				.main_index = 0x2004,
+				.array_max_size = BUTTON_ARRAY_SIZE,
+				.permissions = CANOPEN_RO,
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.b4
+		},
+		{
+				// button 5
+				.main_index = 0x2005,
+				.array_max_size = BUTTON_ARRAY_SIZE,
+				.permissions = CANOPEN_RO,
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.b5
+		},
+		{
+				// button 6
+				.main_index = 0x2006,
+				.array_max_size = BUTTON_ARRAY_SIZE,
+				.permissions = CANOPEN_RO,
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.b6
+		},
+		{
+				// button 7
+				.main_index = 0x2007,
+				.array_max_size = BUTTON_ARRAY_SIZE,
+				.permissions = CANOPEN_RO,
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.b7
+		},
+		{
+				// button 8
+				.main_index = 0x2008,
+				.array_max_size = BUTTON_ARRAY_SIZE,
+				.permissions = CANOPEN_RO,
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.b8
+		},
+		{
+				// button 9
+				.main_index = 0x2009,
+				.array_max_size = BUTTON_ARRAY_SIZE,
+				.permissions = CANOPEN_RO,
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.b9
+		},
+		{
+				// button 10
+				.main_index = 0x200A,
+				.array_max_size = BUTTON_ARRAY_SIZE,
+				.permissions = CANOPEN_RO,
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.b10
 		},
 		{
 				// joystick X
-				.main_index = 0x2010,
-				.sub_index = 0,
+				.main_index = 0x2100,
+				.array_max_size = AXIS_ARRAY_SIZE,
 				.permissions = CANOPEN_RO,
-				.type = CANOPEN_SIGNED8,
-				.data_ptr = (uint8_t*) &keypad.joy_x.value
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.joy_x
 		},
 		{
 				// joystick Y
-				.main_index = 0x2011,
-				.sub_index = 0,
+				.main_index = 0x2101,
+				.array_max_size = AXIS_ARRAY_SIZE,
 				.permissions = CANOPEN_RO,
-				.type = CANOPEN_SIGNED8,
-				.data_ptr = (uint8_t*) &keypad.joy_y.value
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.joy_y
 		},
 		{
 				// joystick Z
-				.main_index = 0x2012,
-				.sub_index = 0,
+				.main_index = 0x2102,
+				.array_max_size = AXIS_ARRAY_SIZE,
 				.permissions = CANOPEN_RO,
-				.type = CANOPEN_SIGNED8,
-				.data_ptr = (uint8_t*) &keypad.joy_z.value
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.joy_z
 		},
 		{
-				// joystick X min value calib
-				.main_index = 0x2020,
-				.sub_index = 0,
-				.permissions = CANOPEN_RW,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.joy_x.calib.min
-		},
-		{
-				// joystick X middle value calib
-				.main_index = 0x2021,
-				.sub_index = 0,
-				.permissions = CANOPEN_RW,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.joy_x.calib.middle
-		},
-		{
-				// joystick X max value calib
-				.main_index = 0x2022,
-				.sub_index = 0,
-				.permissions = CANOPEN_RW,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.joy_x.calib.max
-		},
-		{
-				// joystick Y min value calib
-				.main_index = 0x2023,
-				.sub_index = 0,
-				.permissions = CANOPEN_RW,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.joy_y.calib.min
-		},
-		{
-				// joystick Y middle value calib
-				.main_index = 0x2024,
-				.sub_index = 0,
-				.permissions = CANOPEN_RW,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.joy_y.calib.middle
-		},
-		{
-				// joystick Y max value calib
-				.main_index = 0x2025,
-				.sub_index = 0,
-				.permissions = CANOPEN_RW,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.joy_y.calib.max
-		},
-		{
-				// joystick Z min value calib
-				.main_index = 0x2026,
-				.sub_index = 0,
-				.permissions = CANOPEN_RW,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.joy_z.calib.min
-		},
-		{
-				// joystick Z middle value calib
-				.main_index = 0x2027,
-				.sub_index = 0,
-				.permissions = CANOPEN_RW,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.joy_z.calib.middle
-		},
-		{
-				// joystick Z max value calib
-				.main_index = 0x2028,
-				.sub_index = 0,
-				.permissions = CANOPEN_RW,
-				.type = CANOPEN_UNSIGNED16,
-				.data_ptr = (uint8_t*) &keypad.joy_z.calib.max
-		},
-		{
-				// joystick X axis errors
-				.main_index = 0x2030,
-				.sub_index = 0,
+				// joystick V
+				.main_index = 0x2103,
+				.array_max_size = AXIS_ARRAY_SIZE,
 				.permissions = CANOPEN_RO,
-				.type = CANOPEN_UNSIGNED8,
-				.data_ptr = (uint8_t*) &keypad.joy_x.err
+				.type = CANOPEN_ARRAY8,
+				.data_ptr = (uint8_t*) &keypad.joy_v
 		},
 		{
-				// joystick Y axis errors
-				.main_index = 0x2031,
-				.sub_index = 0,
-				.permissions = CANOPEN_RO,
-				.type = CANOPEN_UNSIGNED8,
-				.data_ptr = (uint8_t*) &keypad.joy_y.err
+				// joystick X calib
+				.main_index = 0x2120,
+				.array_max_size = AXIS_ARRAY_SIZE,
+				.permissions = CANOPEN_RW,
+				.type = CANOPEN_ARRAY16,
+				.data_ptr = (uint8_t*) &keypad.joy_x.calib
 		},
 		{
-				// joystick Z axis errors
-				.main_index = 0x2032,
-				.sub_index = 0,
-				.permissions = CANOPEN_RO,
-				.type = CANOPEN_UNSIGNED8,
-				.data_ptr = (uint8_t*) &keypad.joy_z.err
+				// joystick Y calib
+				.main_index = 0x2121,
+				.array_max_size = AXIS_ARRAY_SIZE,
+				.permissions = CANOPEN_RW,
+				.type = CANOPEN_ARRAY16,
+				.data_ptr = (uint8_t*) &keypad.joy_y.calib
+		},
+		{
+				// joystick Z calib
+				.main_index = 0x2122,
+				.array_max_size = AXIS_ARRAY_SIZE,
+				.permissions = CANOPEN_RW,
+				.type = CANOPEN_ARRAY16,
+				.data_ptr = (uint8_t*) &keypad.joy_z.calib
+		},
+		{
+				// joystick V calib
+				.main_index = 0x2123,
+				.array_max_size = AXIS_ARRAY_SIZE,
+				.permissions = CANOPEN_RW,
+				.type = CANOPEN_ARRAY16,
+				.data_ptr = (uint8_t*) &keypad.joy_v.calib
 		},
 		{
 				// axis calibration request
-				.main_index = 0x2040,
+				.main_index = 0x21F0,
 				.sub_index = 0,
-				.permissions = CANOPEN_RO,
+				.permissions = CANOPEN_RW,
 				.type = CANOPEN_UNSIGNED8,
 				.data_ptr = (uint8_t*) &keypad.state
 		}

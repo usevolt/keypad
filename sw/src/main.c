@@ -44,20 +44,17 @@ keypad_st keypad;
 
 void keypad_init(void *me) {
 
-	__enable_irq();
 	uv_gpio_init_output(LED_1_PIN, true);
+
 	// init terminal
 	uv_terminal_init(terminal_commands, terminal_commands_size());
 
-
-	uv_canopen_init(&keypad.canopen, obj_dict, object_dictionary_size(),
-			CAN1, &keypad.canopen_heatbeat_delay, NULL, NULL);
 
 
 	axis_init(&this->joy_x, JOYSTICK_X_ANALOG_CHANNEL);
 	axis_init(&this->joy_y, JOYSTICK_Y_ANALOG_CHANNEL);
 	axis_init(&this->joy_z, JOYSTICK_Z_ANALOG_CHANNEL);
-	this->joy_errors = ERROR_NONE;
+	axis_init(&this->joy_v, JOYSTICK_V_ANALOG_CHANNEL);
 
 	uv_gpio_init_input(BUTTON_1_POS_PIN, PULL_UP_ENABLED);
 	uv_gpio_init_input(BUTTON_1_NEG_PIN, PULL_UP_ENABLED);
@@ -67,10 +64,10 @@ void keypad_init(void *me) {
 	uv_gpio_init_input(BUTTON_3_NEG_PIN, PULL_UP_ENABLED);
 	uv_gpio_init_input(BUTTON_4_POS_PIN, PULL_UP_ENABLED);
 	uv_gpio_init_input(BUTTON_4_NEG_PIN, PULL_UP_ENABLED);
-	uv_gpio_init_input(BUTTON_5_POS_PIN, PULL_UP_ENABLED);
-	uv_gpio_init_input(BUTTON_5_NEG_PIN, PULL_UP_ENABLED);
-	uv_gpio_init_input(BUTTON_6_POS_PIN, PULL_UP_ENABLED);
-	uv_gpio_init_input(BUTTON_6_NEG_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_5_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_5_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_6_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_6_PIN, PULL_UP_ENABLED);
 	uv_gpio_init_input(BUTTON_7_PIN, PULL_UP_ENABLED);
 	uv_gpio_init_input(BUTTON_8_PIN, PULL_UP_ENABLED);
 
@@ -82,17 +79,23 @@ void keypad_init(void *me) {
 	BUTTON_INIT(&this->b6);
 	BUTTON_INIT(&this->b7);
 	BUTTON_INIT(&this->b8);
+	BUTTON_INIT(&this->b9);
+	BUTTON_INIT(&this->b10);
 
 	if (uv_memory_load(&this->data_start, &this->data_end)) {
 		axis_reset(&this->joy_x, JOYSTICK_X_ANALOG_CHANNEL);
 		axis_reset(&this->joy_y, JOYSTICK_Y_ANALOG_CHANNEL);
 		axis_reset(&this->joy_z, JOYSTICK_Z_ANALOG_CHANNEL);
+		axis_reset(&this->joy_v, JOYSTICK_V_ANALOG_CHANNEL);
 
 		uv_canopen_restore_defaults(&keypad.canopen, obj_dict, object_dictionary_size(),
 				CAN1, &keypad.canopen_heatbeat_delay, NULL, NULL);
 
 		uv_memory_save(&this->data_start, &this->data_end);
 	}
+
+	uv_canopen_init(&keypad.canopen, obj_dict, object_dictionary_size(),
+			CAN1, &keypad.canopen_heatbeat_delay, NULL, NULL);
 
 
 }
@@ -107,9 +110,7 @@ void keypad_step(void* me) {
 
 		uv_canopen_step(&this->canopen, step_ms);
 
-
 		uv_terminal_step();
-
 
 		//update watchdog timer value to prevent a hard reset
 		uv_wdt_update();
@@ -119,11 +120,14 @@ void keypad_step(void* me) {
 			axis_calib_start(&this->joy_x);
 			axis_calib_start(&this->joy_y);
 			axis_calib_start(&this->joy_z);
+			axis_calib_start(&this->joy_v);
 		}
 		else if (this->state == STATE_AXIS_CALIB_DONE) {
+			printf("calib done\n");
 			axis_calib_end(&this->joy_x);
 			axis_calib_end(&this->joy_y);
 			axis_calib_end(&this->joy_z);
+			axis_calib_end(&this->joy_v);
 			uv_memory_save(&this->data_start, &this->data_end);
 			this->state = STATE_RUNNING;
 		}
@@ -131,37 +135,40 @@ void keypad_step(void* me) {
 		axis_step(&this->joy_x, step_ms);
 		axis_step(&this->joy_y, step_ms);
 		axis_step(&this->joy_z, step_ms);
+		axis_step(&this->joy_v, step_ms);
 
 		button_step(&this->b1, uv_gpio_get(BUTTON_1_POS_PIN), uv_gpio_get(BUTTON_1_NEG_PIN));
 		button_step(&this->b2, uv_gpio_get(BUTTON_2_POS_PIN), uv_gpio_get(BUTTON_2_NEG_PIN));
 		button_step(&this->b3, uv_gpio_get(BUTTON_3_POS_PIN), uv_gpio_get(BUTTON_3_NEG_PIN));
 		button_step(&this->b4, uv_gpio_get(BUTTON_4_POS_PIN), uv_gpio_get(BUTTON_4_NEG_PIN));
-		button_step(&this->b5, uv_gpio_get(BUTTON_5_POS_PIN), uv_gpio_get(BUTTON_5_NEG_PIN));
-		button_step(&this->b6, uv_gpio_get(BUTTON_6_POS_PIN), uv_gpio_get(BUTTON_6_NEG_PIN));
+		button_step(&this->b5, uv_gpio_get(BUTTON_5_PIN), 1);
+		button_step(&this->b6, uv_gpio_get(BUTTON_6_PIN), 1);
 		button_step(&this->b7, uv_gpio_get(BUTTON_7_PIN), 1);
 		button_step(&this->b8, uv_gpio_get(BUTTON_8_PIN), 1);
-
-		this->buttons_is_down = 0;
-		this->buttons_pressed = 0;
-		this->buttons_released = 0;
-		for (int i = 0; i < 14; i++) {
-			this->buttons_is_down |= (button_is_down(&((uv_button_st*) &this->b1)[i]) << i);
-			this->buttons_pressed |= (button_pressed(&((uv_button_st*) &this->b1)[i]) << i);
-			this->buttons_released |= (button_released(&((uv_button_st*) &this->b1)[i]) << i);
-		}
+		button_step(&this->b9, uv_gpio_get(BUTTON_9_PIN), 1);
+		button_step(&this->b10, uv_gpio_get(BUTTON_10_PIN), 1);
 
 		if (this->echo) {
 			if (this->state == STATE_AXIS_CALIB) {
-				printf("x min %u, x middle %u, x max %u, y min %u, y middle %u, "
-						"y max %u, z min %u, z middle %u, z max %u\n\r",
-						this->joy_x.calib.min, this->joy_x.calib.middle, this->joy_x.calib.max,
-						this->joy_y.calib.min, this->joy_y.calib.middle, this->joy_y.calib.max,
-						this->joy_z.calib.min, this->joy_z.calib.middle, this->joy_z.calib.max);
+				printf("0x%04x 0x%04x 0x%04x 0x%04x "
+						"0x%04x 0x%04x 0x%04x 0x%04x "
+						"0x%04x 0x%04x 0x%04x 0x%04x "
+						"0x%04x 0x%04x 0x%04x 0x%04x\n",
+						this->joy_x.calib.raw_value, this->joy_x.calib.min,
+						this->joy_x.calib.middle, this->joy_x.calib.max,
+						this->joy_y.calib.raw_value, this->joy_y.calib.min,
+						this->joy_y.calib.middle, this->joy_y.calib.max,
+						this->joy_z.calib.raw_value, this->joy_z.calib.min,
+						this->joy_z.calib.middle, this->joy_z.calib.max,
+						this->joy_v.calib.raw_value, this->joy_v.calib.min,
+						this->joy_v.calib.middle, this->joy_v.calib.max);
 			}
 			else {
-				printf(" joy_x %i, joy_y %i, joy_z %i joy errors %x, is down %x, pressed %x released %x\n\r",
-						this->joy_x.value, this->joy_y.value, this->joy_z.value, this->joy_errors,
-						this->buttons_is_down, this->buttons_pressed, this->buttons_released);
+				printf("0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n",
+						this->joy_x.value, this->joy_x.err,
+						this->joy_y.value, this->joy_y.err,
+						this->joy_z.value, this->joy_z.err,
+						this->joy_v.value, this->joy_v.err);
 			}
 		}
 

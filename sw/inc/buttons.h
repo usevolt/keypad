@@ -20,6 +20,8 @@ typedef struct {
 	int8_t clicked;
 } uv_button_st;
 
+#define BUTTON_ARRAY_SIZE	4
+
 
 #define BUTTON_INIT(button_ptr) \
 		((uv_button_st*) button_ptr)->is_down = false; \

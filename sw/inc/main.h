@@ -36,11 +36,6 @@ typedef struct {
 	/// @brief: Operation state. Either running or axis calibration
 	keypad_states_e state;
 
-	// combined bit shifted values for button states
-	uint16_t buttons_is_down;
-	uint16_t buttons_pressed;
-	uint16_t buttons_released;
-
 	//data structures for all buttons
 	uv_button_st b1;
 	uv_button_st b2;
@@ -50,6 +45,8 @@ typedef struct {
 	uv_button_st b6;
 	uv_button_st b7;
 	uv_button_st b8;
+	uv_button_st b9;
+	uv_button_st b10;
 
 	int canopen_heatbeat_delay;
 
@@ -59,10 +56,12 @@ typedef struct {
 
 	uv_canopen_st canopen;
 
+	uint32_t reserved[2];
+
 	axis_st joy_x;
 	axis_st joy_y;
 	axis_st joy_z;
-	uint8_t joy_errors;
+	axis_st joy_v;
 
 	uv_data_end_t data_end;
 

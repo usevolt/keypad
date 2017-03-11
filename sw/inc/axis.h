@@ -22,29 +22,35 @@
 #define AXIS_VALUE_MIN			(-127)
 
 enum {
-	ERROR_NONE = 0,
+	ERROR_AXIS_NONE = 0,
 	ERROR_AXIS_SHORTCUT_TO_BATTERY,
-	ERROR_AXIS_SHORTCUT_TO_GROUND
+	ERROR_AXIS_SHORTCUT_TO_GROUND,
+	ERROR_AXIS_NOT_INSTALLED
 };
 typedef uint8_t axis_errors_e;
 
 typedef struct {
 	int8_t value;
+	axis_errors_e err;
 	struct calib {
+		uint16_t raw_value;
 		uint16_t min;
 		uint16_t max;
 		uint16_t middle;
 	} calib;
 	uv_adc_channels_e chn;
-	axis_errors_e err;
 	bool calibrating;
 } axis_st;
+
+
+#define AXIS_ARRAY_SIZE	2
+#define AXIS_CALIB_ARRAY_SIZE	4
 
 
 static inline void axis_init(axis_st *this, uv_adc_channels_e chn) {
 	this->value = 0;
 	this->chn = chn;
-	this->err = ERROR_NONE;
+	this->err = ERROR_AXIS_NONE;
 	this->calibrating = false;
 }
 

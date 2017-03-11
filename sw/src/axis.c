@@ -11,6 +11,9 @@
 
 
 void axis_calib_start(axis_st *this) {
+	if (!this->chn) {
+		return;
+	}
 	if (!this->calibrating) {
 		this->calib.max = ADC_MAX_VALUE / 2;
 		this->calib.min = ADC_MAX_VALUE / 2;
@@ -22,6 +25,15 @@ void axis_calib_start(axis_st *this) {
 
 
 void axis_step(axis_st *this, uint16_t step_ms) {
+	if (!this->chn) {
+		this->value = 0;
+		this->err = ERROR_AXIS_NOT_INSTALLED;
+		this->calib.min = 0;
+		this->calib.max = ADC_MAX_VALUE;
+		this->calib.middle = ADC_MAX_VALUE / 2;
+		this->calib.raw_value = 0;
+		return;
+	}
 	int16_t val = uv_adc_read_average(this->chn, ADC_AVG_COUNT);
 	if (val > HAL_MAX_VALUE) {
 		this->value = 0;
@@ -34,7 +46,7 @@ void axis_step(axis_st *this, uint16_t step_ms) {
 		return;
 	}
 	else {
-		this->err = ERROR_NONE;
+		this->err = ERROR_AXIS_NONE;
 	}
 
 	if (!this->calibrating) {

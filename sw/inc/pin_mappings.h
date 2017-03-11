@@ -16,41 +16,35 @@
 
 #if LEFT
 
-
-#elif RIGHT
-
-
-#endif
-
 #define LED_1_PIN			P2_1
 
-#define BUTTON_1_NEG_PIN	P2_10
+#define BUTTON_1_POS_PIN	P0_7
 
-#define BUTTON_1_POS_PIN	P2_2
+#define BUTTON_1_NEG_PIN	P2_9
 
 #define BUTTON_2_POS_PIN	P2_7
 
 #define BUTTON_2_NEG_PIN	P1_8
 
-#define BUTTON_3_POS_PIN	P3_1
+#define BUTTON_3_POS_PIN	P2_10
 
-#define BUTTON_3_NEG_PIN	P2_9
+#define BUTTON_3_NEG_PIN	P2_2
 
-#define BUTTON_4_POS_PIN	P0_6
+#define BUTTON_4_POS_PIN	P2_0
 
-#define BUTTON_4_NEG_PIN	P0_7
+#define BUTTON_4_NEG_PIN	P2_8
 
-#define BUTTON_5_POS_PIN	P0_9
+#define BUTTON_5_PIN		P0_8
 
-#define BUTTON_5_NEG_PIN	P0_8
+#define BUTTON_6_PIN		P3_1
 
-#define BUTTON_6_POS_PIN	P2_5
+#define BUTTON_7_PIN		P0_9
 
-#define BUTTON_6_NEG_PIN	P2_8
+#define BUTTON_8_PIN		P2_6
 
-#define BUTTON_7_PIN		P2_6
+#define BUTTON_9_PIN		P0_6
 
-#define BUTTON_8_PIN		P2_0
+#define BUTTON_10_PIN		P2_5
 
 
 
@@ -59,6 +53,54 @@
 #define JOYSTICK_Y_ANALOG_CHANNEL		ADC_0
 
 #define JOYSTICK_Z_ANALOG_CHANNEL		ADC_2
+
+#define JOYSTICK_V_ANALOG_CHANNEL		0
+
+
+#elif RIGHT
+
+#define LED_1_PIN			P2_1
+
+#define BUTTON_1_POS_PIN	P3_1
+
+#define BUTTON_1_NEG_PIN	P2_9
+
+#define BUTTON_2_POS_PIN	P0_6
+
+#define BUTTON_2_NEG_PIN	P0_7
+
+#define BUTTON_3_POS_PIN	P0_9
+
+#define BUTTON_3_NEG_PIN	P0_8
+
+#define BUTTON_4_POS_PIN	P2_8
+
+#define BUTTON_4_NEG_PIN	P2_5
+
+#define BUTTON_5_PIN		P2_10
+
+#define BUTTON_6_PIN		P1_8
+
+#define BUTTON_7_PIN		P2_2
+
+#define BUTTON_8_PIN		P2_7
+
+#define BUTTON_9_PIN		P2_0
+
+#define BUTTON_10_PIN		P2_6
+
+
+
+#define JOYSTICK_X_ANALOG_CHANNEL 		ADC_1
+
+#define JOYSTICK_Y_ANALOG_CHANNEL		ADC_0
+
+#define JOYSTICK_Z_ANALOG_CHANNEL		ADC_2
+
+#define JOYSTICK_V_ANALOG_CHANNEL		0
+
+
+#endif
 
 
 #endif /* UW_KEYPAD_SRC_PIN_MAPPINGS_H_ */
