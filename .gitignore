@@ -1,5 +1,6 @@
 sw/Debug
 sw/release/
+sw/obj/
 sw/keypad.axf
 sw/keypad.bin
 sw/keypad.hex

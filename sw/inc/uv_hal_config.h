@@ -31,8 +31,8 @@
 
 
 
-#define CONFIG_LOG_ERRORS					1
-#define CONFIG_INFORMATIVE_ERRORS			0
+#define CONFIG_LOG_ERRORS							1
+#define CONFIG_INFORMATIVE_ERRORS					0
 
 
 
@@ -40,19 +40,19 @@
  * Note: RTOS is not available for Cortex-M0 based
  * MCU's and thus should be disabled when compiling
  * for them.*/
-#define CONFIG_RTOS							1
-#define CONFIG_RTOS_HEAP_SIZE				3000
+#define CONFIG_RTOS									1
+#define CONFIG_RTOS_HEAP_SIZE						3000
 
 
 
 
-#define CONFIG_CAN							1
-#define CONFIG_CAN1							1
-#define CONFIG_CAN_LOG						0
-#define CONFIG_CAN_ERROR_LOG				0
-#define CONFIG_CAN1_RX_BUFFER_SIZE			4
-#define CONFIG_CAN1_TX_BUFFER_SIZE			4
-#define CONFIG_CAN1_BAUDRATE				250000
+#define CONFIG_CAN									1
+#define CONFIG_CAN1									1
+#define CONFIG_CAN_LOG								0
+#define CONFIG_CAN_ERROR_LOG						0
+#define CONFIG_CAN1_RX_BUFFER_SIZE					4
+#define CONFIG_CAN1_TX_BUFFER_SIZE					4
+#define CONFIG_CAN1_BAUDRATE						250000
 
 
 
@@ -75,7 +75,11 @@
 #define CONFIG_CANOPEN_RXPDO_COM_INDEX				0x1400
 #define CONFIG_CANOPEN_RXPDO_MAP_INDEX				0x1600
 
-#define CONFIG_CANOPEN_DEFAULT_NODE_ID				0xD
+#if LEFT
+#define CONFIG_CANOPEN_DEFAULT_NODE_ID				0x3
+#elif RIGHT
+#define CONFIG_CANOPEN_DEFAULT_NODE_ID				0x4
+#endif
 #define CONFIG_CANOPEN_DEFAULT_HEARTBEAT_TIME		1000
 #define CONFIG_CANOPEN_DEVICE_TYPE					0
 #define CONFIG_CANOPEN_VENDOR_ID					0

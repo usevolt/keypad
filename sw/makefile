@@ -19,7 +19,7 @@ MCPU := cortex-m0
 O := Os
 
 # Name of the directory where build files will be saved
-BUILDDIR := release
+BUILDDIR := obj
 
 # Name of the produced binary firmware
 BINARY := keypad
