@@ -11,15 +11,14 @@
 
 
 void axis_calib_start(axis_st *this) {
-	if (!this->chn) {
-		return;
+	if (this->chn && this->err == ERROR_AXIS_NONE) {
+		if (!this->calibrating) {
+			this->calib.max = ADC_MAX_VALUE / 2;
+			this->calib.min = ADC_MAX_VALUE / 2;
+			this->calib.middle = uv_adc_read_average(this->chn, ADC_AVG_COUNT * 10);
+		}
+		this->calibrating = true;
 	}
-	if (!this->calibrating) {
-		this->calib.max = ADC_MAX_VALUE / 2;
-		this->calib.min = ADC_MAX_VALUE / 2;
-		this->calib.middle = uv_adc_read_average(this->chn, ADC_AVG_COUNT * 10);
-	}
-	this->calibrating = true;
 }
 
 
@@ -75,18 +74,20 @@ void axis_step(axis_st *this, uint16_t step_ms) {
 	}
 	// calibration steps
 	else {
-		if (val > this->calib.max) {
-			this->calib.max = val;
+		if (this->err == ERROR_AXIS_NONE) {
+			if (val > this->calib.max) {
+				this->calib.max = val;
+			}
+			if (val < this->calib.min) {
+				this->calib.min = val;
+			}
+			if (val > HAL_MAX_VALUE) {
+				this->calib.max = HAL_MAX_VALUE - 1;
+			}
+			if (val < HAL_MIN_VALUE) {
+				this->calib.min = HAL_MIN_VALUE + 1;
+			}
+			this->value = 0;
 		}
-		if (val < this->calib.min) {
-			this->calib.min = val;
-		}
-		if (val > HAL_MAX_VALUE) {
-			this->calib.max = HAL_MAX_VALUE - 1;
-		}
-		if (val < HAL_MIN_VALUE) {
-			this->calib.min = HAL_MIN_VALUE + 1;
-		}
-		this->value = 0;
 	}
 }
