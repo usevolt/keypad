@@ -13,8 +13,8 @@
 void axis_calib_start(axis_st *this) {
 	if (this->chn && this->err == ERROR_AXIS_NONE) {
 		if (!this->calibrating) {
-			this->calib.max = ADC_MAX_VALUE / 2;
-			this->calib.min = ADC_MAX_VALUE / 2;
+			this->calib.max = ADC_MAX_VALUE / 2 + AXIS_MIDDLE_THRESHOLD * 2;
+			this->calib.min = ADC_MAX_VALUE / 2 - AXIS_MIDDLE_THRESHOLD * 2;
 			this->calib.middle = uv_adc_read_average(this->chn, ADC_AVG_COUNT * 10);
 		}
 		this->calibrating = true;
