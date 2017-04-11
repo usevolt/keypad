@@ -134,7 +134,7 @@ const uv_canopen_object_st obj_dict[] = {
 		{
 				// joystick X calib
 				.main_index = 0x2120,
-				.array_max_size = AXIS_ARRAY_SIZE,
+				.array_max_size = AXIS_CALIB_ARRAY_SIZE,
 				.permissions = CANOPEN_RW,
 				.type = CANOPEN_ARRAY16,
 				.data_ptr = (uint8_t*) &keypad.joy_x.calib
@@ -142,7 +142,7 @@ const uv_canopen_object_st obj_dict[] = {
 		{
 				// joystick Y calib
 				.main_index = 0x2121,
-				.array_max_size = AXIS_ARRAY_SIZE,
+				.array_max_size = AXIS_CALIB_ARRAY_SIZE,
 				.permissions = CANOPEN_RW,
 				.type = CANOPEN_ARRAY16,
 				.data_ptr = (uint8_t*) &keypad.joy_y.calib
@@ -150,7 +150,7 @@ const uv_canopen_object_st obj_dict[] = {
 		{
 				// joystick Z calib
 				.main_index = 0x2122,
-				.array_max_size = AXIS_ARRAY_SIZE,
+				.array_max_size = AXIS_CALIB_ARRAY_SIZE,
 				.permissions = CANOPEN_RW,
 				.type = CANOPEN_ARRAY16,
 				.data_ptr = (uint8_t*) &keypad.joy_z.calib
@@ -158,7 +158,7 @@ const uv_canopen_object_st obj_dict[] = {
 		{
 				// joystick V calib
 				.main_index = 0x2123,
-				.array_max_size = AXIS_ARRAY_SIZE,
+				.array_max_size = AXIS_CALIB_ARRAY_SIZE,
 				.permissions = CANOPEN_RW,
 				.type = CANOPEN_ARRAY16,
 				.data_ptr = (uint8_t*) &keypad.joy_v.calib
