@@ -1,4 +1,4 @@
-update=Tue 18 Oct 2016 18:19:23 EEST
+update=ti 11. heinäkuuta 2017 17.31.31
 version=1
 last_client=kicad
 [general]
@@ -31,9 +31,10 @@ ModuleOutlineThickness=0.15
 version=1
 LibDir=/home/usevolt/uv/kicad/libs
 [eeschema/libraries]
-LibName1=/home/usevolt/uv/kicad/libs/kemet
-LibName2=/home/usevolt/uv/kicad/libs/multicomp
-LibName3=/home/usevolt/uv/kicad/libs/usevolt
-LibName4=/home/usevolt/uv/kicad/libs/wurth_elektronik_LED
-LibName5=/home/usevolt/uv/kicad/libs/power
+LibName1=left_keypad-rescue
+LibName2=/home/usevolt/uv/kicad/libs/kemet
+LibName3=/home/usevolt/uv/kicad/libs/multicomp
+LibName4=/home/usevolt/uv/kicad/libs/usevolt
+LibName5=/home/usevolt/uv/kicad/libs/wurth_elektronik_LED
+LibName6=/home/usevolt/uv/kicad/libs/power
 
