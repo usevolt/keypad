@@ -1,4 +1,4 @@
-update=ti 11. heinäkuuta 2017 17.31.31
+update=ke 29. marraskuuta 2017 21.09.40
 version=1
 last_client=kicad
 [general]
