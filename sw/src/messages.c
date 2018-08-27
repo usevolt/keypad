@@ -76,30 +76,6 @@ const uv_canopen_object_st obj_dict[] = {
 				.data_ptr = (uint8_t*) &keypad.b7
 		},
 		{
-				// button 8
-				.main_index = 0x2008,
-				.array_max_size = BUTTON_ARRAY_SIZE,
-				.permissions = CANOPEN_RO,
-				.type = CANOPEN_ARRAY8,
-				.data_ptr = (uint8_t*) &keypad.b8
-		},
-		{
-				// button 9
-				.main_index = 0x2009,
-				.array_max_size = BUTTON_ARRAY_SIZE,
-				.permissions = CANOPEN_RO,
-				.type = CANOPEN_ARRAY8,
-				.data_ptr = (uint8_t*) &keypad.b9
-		},
-		{
-				// button 10
-				.main_index = 0x200A,
-				.array_max_size = BUTTON_ARRAY_SIZE,
-				.permissions = CANOPEN_RO,
-				.type = CANOPEN_ARRAY8,
-				.data_ptr = (uint8_t*) &keypad.b10
-		},
-		{
 				// joystick X
 				.main_index = 0x2100,
 				.array_max_size = AXIS_ARRAY_SIZE,

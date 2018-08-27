@@ -63,12 +63,12 @@ void keypad_init(void *me) {
 	uv_gpio_init_input(BUTTON_3_NEG_PIN, PULL_UP_ENABLED);
 	uv_gpio_init_input(BUTTON_4_POS_PIN, PULL_UP_ENABLED);
 	uv_gpio_init_input(BUTTON_4_NEG_PIN, PULL_UP_ENABLED);
-	uv_gpio_init_input(BUTTON_5_PIN, PULL_UP_ENABLED);
-	uv_gpio_init_input(BUTTON_5_PIN, PULL_UP_ENABLED);
-	uv_gpio_init_input(BUTTON_6_PIN, PULL_UP_ENABLED);
-	uv_gpio_init_input(BUTTON_6_PIN, PULL_UP_ENABLED);
-	uv_gpio_init_input(BUTTON_7_PIN, PULL_UP_ENABLED);
-	uv_gpio_init_input(BUTTON_8_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_5_POS_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_5_NEG_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_6_POS_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_6_NEG_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_7_POS_PIN, PULL_UP_ENABLED);
+	uv_gpio_init_input(BUTTON_7_NEG_PIN, PULL_UP_ENABLED);
 
 	BUTTON_INIT(&this->b1);
 	BUTTON_INIT(&this->b2);
@@ -77,9 +77,6 @@ void keypad_init(void *me) {
 	BUTTON_INIT(&this->b5);
 	BUTTON_INIT(&this->b6);
 	BUTTON_INIT(&this->b7);
-	BUTTON_INIT(&this->b8);
-	BUTTON_INIT(&this->b9);
-	BUTTON_INIT(&this->b10);
 
 	if (uv_memory_load(&this->data_start, &this->data_end)) {
 		axis_reset(&this->joy_x, JOYSTICK_X_ANALOG_CHANNEL);
@@ -95,6 +92,8 @@ void keypad_init(void *me) {
 
 	uv_canopen_init(&keypad.canopen, obj_dict, object_dictionary_size(),
 			CAN1, &keypad.canopen_heatbeat_delay, NULL, NULL);
+
+	uv_canopen_set_state(&keypad.canopen, CANOPEN_OPERATIONAL);
 
 
 }
@@ -140,12 +139,9 @@ void keypad_step(void* me) {
 		button_step(&this->b2, uv_gpio_get(BUTTON_2_POS_PIN), uv_gpio_get(BUTTON_2_NEG_PIN));
 		button_step(&this->b3, uv_gpio_get(BUTTON_3_POS_PIN), uv_gpio_get(BUTTON_3_NEG_PIN));
 		button_step(&this->b4, uv_gpio_get(BUTTON_4_POS_PIN), uv_gpio_get(BUTTON_4_NEG_PIN));
-		button_step(&this->b5, uv_gpio_get(BUTTON_5_PIN), 1);
-		button_step(&this->b6, uv_gpio_get(BUTTON_6_PIN), 1);
-		button_step(&this->b7, uv_gpio_get(BUTTON_7_PIN), 1);
-		button_step(&this->b8, uv_gpio_get(BUTTON_8_PIN), 1);
-		button_step(&this->b9, uv_gpio_get(BUTTON_9_PIN), 1);
-		button_step(&this->b10, uv_gpio_get(BUTTON_10_PIN), 1);
+		button_step(&this->b5, uv_gpio_get(BUTTON_5_POS_PIN), uv_gpio_get(BUTTON_5_NEG_PIN));
+		button_step(&this->b6, uv_gpio_get(BUTTON_6_POS_PIN), uv_gpio_get(BUTTON_6_NEG_PIN));
+		button_step(&this->b7, uv_gpio_get(BUTTON_7_POS_PIN), uv_gpio_get(BUTTON_7_NEG_PIN));
 
 		if (this->echo) {
 			if (this->state == STATE_AXIS_CALIB) {

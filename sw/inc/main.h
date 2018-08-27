@@ -44,9 +44,6 @@ typedef struct {
 	uv_button_st b5;
 	uv_button_st b6;
 	uv_button_st b7;
-	uv_button_st b8;
-	uv_button_st b9;
-	uv_button_st b10;
 
 	int canopen_heatbeat_delay;
 
