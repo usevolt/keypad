@@ -9,7 +9,6 @@
 
 
  GROUP(
- libgcc.a
- libc_nano.a
- libm.a
+  libcr_c.a
+  libcr_eabihelpers.a
  )

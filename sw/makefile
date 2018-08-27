@@ -30,7 +30,14 @@ INCLUDEDIRS := 	-I"./inc/" \
 				-I"./hal/uv_hal/inc" \
 				-I"./hal/uv_hal/freertos/include" \
 				-I"./hal/uv_hal/freertos/portable/GCC/ARM_CM0"\
-				-I"./hal/CMSIS_CORE_LPC11xx/inc"
+				-I"./hal/CMSIS_CORE_LPC11xx/inc" \
+				-I"/usr/local/lpcxpresso_8.2.2_650/lpcxpresso/tools/redlib/include"
+
+#List of libraries
+LIB_DIRS := 	-L"."
+
+LIBS :=			-lcr_c \
+			-lcr_eabihelpers
 
 
 ### END OF APP CONFIG ###
@@ -48,9 +55,11 @@ FULL_NAME := $(APP_NAME)_$(GIT_VERSION)
 
 
 #Note: -D__USE_CMSIS is mandatory, otherwise the program doesnt run
-CFLAGS := -DCORE_M0 -D__USE_CMSIS -D__NEWLIB__ $(INCLUDEDIRS) -$(O) -g3 -Wall -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -mcpu=$(MCPU) -mthumb
+CFLAGS := -DCORE_M0 -D__USE_CMSIS -D__NEWLIB__ $(INCLUDEDIRS) -$(O) -g3 -Wall -fmessage-length=0 -fno-builtin \
+-ffunction-sections -fdata-sections -mcpu=$(MCPU) -mthumb
 
-LDFLAGS := -nostdlib -Xlinker -Map="$(BUILDDIR)/$(APP_NAME).map" -Xlinker --cref -Xlinker --gc-sections -mcpu=$(MCPU) -mthumb -T "$(APP_NAME).ld" -D__UV_APP_VERSION=\"$(GIT_VERSION)\"
+LDFLAGS := -nostdlib -Xlinker -Map="$(BUILDDIR)/$(APP_NAME).map" -Xlinker --cref -Xlinker --gc-sections \
+-mcpu=$(MCPU) -mthumb -T "$(APP_NAME).ld" -D__UV_APP_VERSION=\"$(GIT_VERSION)\"  -static $(LIB_DIRS) $(LIBS)
 
 
 # Get list of object files, with paths
@@ -90,7 +99,7 @@ $(BUILDDIR)/%.o: %.c
 
 post-build:
 	-@echo ""
-	-@echo 'Performing post-build steps'
+	-@echo 'Performing post-build steps for $(APP_NAME)_$(GIT_VERSION)'
 	-@echo ""
 	-arm-none-eabi-size "$(APP_NAME).axf" 
 	-arm-none-eabi-objcopy -O ihex "$(APP_NAME).axf" "$(APP_NAME).hex"

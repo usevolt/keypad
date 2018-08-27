@@ -11,7 +11,6 @@
 #ifdef __USE_CMSIS
 #include "LPC11xx.h"
 #endif
-#include <cr_section_macros.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
