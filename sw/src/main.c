@@ -182,6 +182,7 @@ void keypad_step(void* me) {
 				uv_gpio_toggle(LED_1_PIN);
 				ledi = 0;
 			}
+			LPC_CAN->CNTL &= ~(1);
 			break;
 		default:
 			if (ledi >= 1000 / step_ms) {
